@@ -1,6 +1,6 @@
 # ShopRenter Billing API
 
-##Leírás
+## Leírás
 
 A Billing API segítségével az app fejlesztők könnyedén tudnak
 bankkártyás fizetési lehetőséget kínálni Ügyfeleiknek az Alkalmazásuk értékesítéséhez.
@@ -62,9 +62,9 @@ Amire szükség lesz tehát:
 - failedUrl és successUrl: Itt egy olyan oldalakat kell elhelyezni, amely tajákoztatja a Vásárlót a fizetés kimeneteléről
 
 
-#Egyszeri díj fizetés (One Time Charge)
+# Egyszeri díj fizetés (One Time Charge)
 
-##Tulajdonságok
+## Tulajdonságok
 
 |Tulajdonság            |Leírás                                                                                                                                         |Kötelező       |Olvasható            |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|:-------------:|:-------------------:|
@@ -87,7 +87,7 @@ Amire szükség lesz tehát:
 |test                   | Ha értéke true, akkor teszt üzemmódban történik a fizetés feldolgozása                                                                        |               |          x          |
 |confirmationUrl        | Létrehozás után, erre az url-re kell írányítani a Vásárlót                                                                                    |               |          x          |
 
-#Belépési pont
+## Belépési pont
 
 POST https://<shop_name>.api.shoprenter.hu/oneTimeCharges
 
@@ -142,11 +142,11 @@ Erre adott válasz:
 A folyamat közben történő eseményekről folyamatosan tájékoztatja a rendszer a alkalmazást
 a notificationUrl-en keresztül.
 
-#Fizetési terv az ismétlődő díjfizetéshez
+# Fizetési terv az ismétlődő díjfizetéshez
 
 A fizetési tervet képzeljük el úgy, mint egy tervrajzot, egy blueprintet.
 
-###Működés példán keresztül
+### Működés példán keresztül
 Szeretném az alkalmazásomat havi díjassá tenni és 3 féle havidíjas csomagot akarok hozzárendelni:
 Bronz, Szilver, Gold.
 Ez 3 különböző fizetési tervet jelent, melynek eltérnek a nevei, az árai, és esetleg a számlázási időszakai.
@@ -161,23 +161,23 @@ netPrice: 10000
 Tehát, ha a Vásárló előfizet, havonta (billingCycleLength: 1) fizet 10000 HUF Nettó összeget és ez a terhelés 12-szer (billingCycleCount: 12) történik meg.
 Magyarán: 1 évig havonta fizet 10000 HUF Nettót. (billingCycleLength * billingCycleCount)
 
-###Fizetési tervek kezelése
+### Fizetési tervek kezelése
 
 A fizetési terveinket a https://billing.shoprenter/plans oldalon tudjuk szerkeszteni.
 Bejelentkezés után listaszerűen láthatjuk a meglévő terveink, illetve újat adhatunk hozzá.
 
-[Kép 1](/image/plan1.jpg)
+![Kép 1](/image/plan1.jpg)
 
-[Kép 2](/image/plan2.jpg)
+![Kép 2](/image/plan2.jpg)
 
 Megjegyzés: A lista oldalon, az Azonosító oszlopban lévő értékkel tudunk hivatkozni az egyes Fizetési tervekre,
 amikor Ismétlődő díj fizetést akarunk létrehozni az API-n keresztül.
 
 
 
-#Ismétlődő díj fizetés (Recurring Charge)
+# Ismétlődő díj fizetés (Recurring Charge)
 
-##Tulajdonságok
+## Tulajdonságok
 
 |Tulajdonság            |Leírás                                                                                                                                                 |Kötelező       |Olvasható            |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------:|:-------------------:|
@@ -205,7 +205,7 @@ amikor Ismétlődő díj fizetést akarunk létrehozni az API-n keresztül.
 |confirmationUrl        | Létrehozás után, erre az url-re kell írányítani a Vásárlót                                                                                            |               |          x          |
 
 
-#Belépési pont
+## Belépési pont
 
 POST https://<shop_name>.api.shoprenter.hu/recurringCharges
 
@@ -251,12 +251,12 @@ Erre adott válasz:
     "confirmationUrl": "https://<shop_name>.api.shoprenter.hu/admin/app/payment/recurring/5"
 }
 ```
-
-##Használat
+ 
+## Használat
 
 Teljesen megegyezik a Egyszeri fizetés használatával. Egyedül a rendszeren belüli kezelésben különbözik.
 
-##Működése
+## Működése
 
 Miután az első időszak kifezetése megtörtént a Vásárló részéről, a rendszer automatikusan kezeli az ismételt díj beszedést.
 A Billing API **minden nap** ellenőrzi, mely Recurring Charge-ok azok, amelyeket ismételni kell az adott napon.
@@ -274,7 +274,7 @@ Ha nem sikerül ezentúl se folytatni a díj beszedést, úgy a adott Recurring 
 
 Természetesen itt is minden hibáról a notificationUrl értesítést kap az alkalmazás.
 
-#Státuszok
+# Státuszok
 
 A két fizetési típushoz tartoznak státuszok, melyek az adott fizetés életciklusának állapotáról adnak információt.
 Bár az első sikeres tranzakció után a két típusnak eltérő az életpályája, a fizetések által felvehető állapotok nagyrészt megegyeznek
@@ -290,7 +290,7 @@ Bár az első sikeres tranzakció után a két típusnak eltérő az életpály�
 |FAILED                     | A bankkártyás fizetést lebonyolító szolgáltatásban történt olyan hiba, amely nem feloldható, nem folytatható                                                                                                                                  |
 |CANCELLED                  | Ha az Ismételt díj fizetés FROZEN állapotú, 15 nap után - ha nem sikerült ACTIVE állapotra visszaállítani - úgy ebbe az állapotba kerül. Illetve ha fizetés direkt megszakításra kerül pl.: alkalmazás törlésénél, CANCELLED lesz az státusz  |
 
-#Értesítések: notificationUrl
+# Értesítések: notificationUrl
 
 A Billing API a fizetési folyamat közben történő események üzeneteit a notificationUrl tulajdonságnál megadott URL-re küldi el.
 Ezek lehetnek a folyamat sikerességét jelző üzenetek, vagy a felmerülő hibák üzenetei.
@@ -305,14 +305,14 @@ Ezek lehetnek a folyamat sikerességét jelző üzenetek, vagy a felmerülő hib
 | domain      | A bolt domain-je. Csak DECLINE státuszba kerülés esetén lesz a payload-ba|
 
 
-#Alkalmazás törlése
+# Alkalmazás törlése
 
 Az alkalmazás törlésénél, mint ahogy eddig is, az uninstallUrl-re érkezik egy webhook a ShopRentertől,
 melyet az alkalmazásokhoz regisztrációjához kérünk az ügyfelektől. Annyiban lett bővítve az uninstall folyamat,
 hogy az aktuálisan futó, Ismétlőd díj fizetéseket is **megszüntetjük**.
 
 
-#Teszt üzemmód
+# Teszt üzemmód
 
 Lehetőséget adunk arra, hogy a Billing API integrációját - annak fejlesztése közben - biztonságosan lehessen tesztelni.
 Ahhoz, hogy egy fizetést teszt üzemmódban indítsuk el, csak annyi a dolgunk, hogy amikor létrehozunk egy új fizetést,
@@ -325,7 +325,7 @@ hogy ellenőrízhetővé válljon, hogy elés fizetés esetén, milyen adatokkal
 Teszt Barion kártyaadatok:
 https://docs.barion.com/Sandbox
 
-#Számlázási adatok és ÁFA kalkuláció
+# Számlázási adatok és ÁFA kalkuláció
 
 A számlázi adatokat a ShopRenter automatikusan kéri le a Vásárló boltjából. Így külön nem igényel további intézkedést
 az Alkalmazás fejlesztő részéről.
