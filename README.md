@@ -1,66 +1,68 @@
 # ShopRenter Billing API
 
-##Leírás
+## Leírás
 
-A Billing API segítségével az app fejlesztők könnyedén tudnak
-bankkártyás fizetési lehetőséget kínálni Ügyfeleiknek az Alkalmazásuk értékesítéséhez.
-Egyszeri és ismétlődő díj fizetés is eszközölhető vele, emellett az automatikus számlakiállításról
-is gondoskodik az alkalmazás fejlesztők közbenjárása nélkül.
-Grafikus felületen elérhetőek az egyes alkalmazások pénzügyi statisztikái, illetve hogy mennyi
-jutalék illeti az alkalmazás üzemeltetőjét az egyes befizetések után.
-
-Továbbá ugyancsak egy grafikus felületet biztosítunk fizetési tervek létrehozásához, amely
-ismétlődő díjfizetés esetén elengedhetetlen.
+A Billing API egy olyan eszköztár amely olyan kártyás fizetési lehetőséget ad az alkalmazásokhoz 
+amivel gyorsabban konvertálhatja a ShopRenterből érkező lead-eket bárki. Egyszeri és ismétlődő díj
+fizetés is eszközölhető vele, emellett az automatikus számlakiállításról is gondoskodik az alkalmazás
+fejlesztők közbenjárása nélkül. Biztosítunk a fenti funkciók mellett egy grafikus felületet is.
+Itt elérhetőek az egyes alkalmazások pénzügyi statisztikái, illetve hogy milyen bevételekre 
+tett szert a befizetésekből. Továbbá a fizetési tervek létrehozását is könnyedén elvégezhetjük
+innen, amely ismétlődő díjfizetés esetén sokban könnyíti meg a munkánkat.
 
 ## Szükséges beállítások
 
-A Billing API használata előtt - ha már van alkalmazásunk - igényelnünk kell
-a partnersupport@shoprenter.hu email címen keresztül egy felhasználó nevet és egy token-t.
-A ShopRenter munkatársai regisztrálják a kérést és ezután használatba vehető az API.
-A felhasználó név és a token lesz a belépési jelszavunk az
-alkalmazásunk pénzügyi statisztikáihoz és ugyan itt készíthetünk fizetési tervet.
+A Billing API használata előtt - ha már van alkalmazásunk - igényelnünk kell a partnersupport@shoprenter.hu
+email címen keresztül egy felhasználó nevet és egy token-t. A ShopRenter munkatársai regisztrálják a kérést
+és ezután használatba vehető az API. Ekkor egy felhasználó név és token párost készítünk el ami a ShopRenter
+Partner Dashboard oldalra való belépést biztosítja.
+
+A Shoprenter Partner Dashboardon tekinthetőek meg a pénzügyi kimutatások az alkalmazásra vonatkozóan és
+ kezelhetőek a fizetési tervek is: https://billing.shoprenter.hu/login
 
 
 **Fontos!** **A felhasználó név és jelszó alkalmazás specifikus!**
-Így ha több alkalmazásunk van, minden alkalmazáshoz külön jár hozzáférés.
+Tehát ha több alkalmazásunk van, minden alkalmazáshoz külön hozzáférést kell igényelni.
 
 
-Az igényelt teszt bolt számlázási adatait, kérjük, kellő odafigyeléssel töltsék ki.
-Hiányos számlázi adatok esetén, a rendszer nem képes számlát kiállítani, így a fizetések létrehozását is gátolja.
-Különös tekintettel legyenek email cím megadására, mivel teszt üzemmódban erre küldi ki a rendszer
-a számlázási adat összesítő emailt.
-
-Ha segítségre lenne szüksége a teszt boltja beállításaival kapcsolatban, kérjük keressen minket bizalommal a
-partnertsupport@shoprenter.hu email címen.
+Az igényelt teszt bolt számlázási adatait minden esetben a megfelelő adatokkal töltsük ki, hiszen hiányos számlázási adatok esetén, a rendszer nem képes számlát kiállítani, így ezen beállítások hiánya a fizetések létrehozását is gátolja.
+A legfontosabb adat az email cím, mivel teszt üzemmódban ide fogja kiküldeni a rendszer
+a számlázási adat-összesítő teszt emailt.
 
 ## Elérés
 
-A számlázó két ShopRenter API resource-on keresztül érhető el. Mindkét endpoint csak és kizárólag POST kérést tud kezelni.
-_**https://<shop_name>.api.shoprenter.hu/oneTimeCharges**_
-_**https://<shop_name>.api.shoprenter.hu/recurringCharges**_
-
-Nem szükséges a meglévő alkalmazás telepítéseket megismételni a Billing API integrációja után.
+A számlázó három ShopRenter API resource-on keresztül érhető el.
+POST _**https://<shop_name>.api.shoprenter.hu/oneTimeCharges**_
+POST _**https://<shop_name>.api.shoprenter.hu/recurringCharges**_
+DELETE _**https://<shop_name>.api.shoprenter.hu/recurringCharges/{recurring_charge_id}**_
 
 A Shoprenter Partner Dashboardon tekinthetőek meg a pénzügyi kimutatások és kezelhetőek a Fizetési tervek:
+http://billing.shoprenter.hu/login
 
-http://billing.shoprenter.hu/
+A login felületen, a már korábban említett regisztráció során kapott felhasználó név/token párossal tudunk belépni az alkalmazáshoz tartozó dashboardra.
 
-A login felületen, a regisztráció során kapott felhasználó név/token párossal tudunk belépni az alkalmazáshoz tartozó dashboardra.
+FONTOS: Nem szükséges a meglévő alkalmazás telepítéseket megismételni a Billing API integrációja után.
+
 
 ## Kezdeti lépések
 
-Tekintetbe véve, hogy itt egy API-ról van szó, a fejlesztőnek kell biztosítani egy felületet az alkalmazásán belül,
-ahol a Vásárló elindíthatja a fizetési folyamatot. Pl.: Ha az Ismétlődő díj fizetést vesszük alapul, az alkalmazásunk tartalmazhat
+Mivel a fizetési tervek létrehozásához API-t használunk, minden esetben a fejlesztőnek kell biztosítani egy felületet az alkalmazásán belül,
+ahol a bolt tulajdonos elindíthatja a fizetési folyamatot. Pl.: Ha az Ismétlődő díj fizetést vesszük alapul, az alkalmazásunk tartalmazhat
 egy olyan aloldalt, ahol különböző havi díjas csomagokat kínálhatunk. A csomag kiválasztása után, annak megfelelően POST kérést küld
 az alkalmazás a Billing API felé, hogy hozzon létre egy Ismétlődő díj fizetést.
 
 Amire szükség lesz tehát:
-- Vásárlás elindításáért felelős aloldal vagy gombok
 
-- notificationUrl: Az API a fizetés közben történt eseményekről fog küldeni ide webhookot. Gondoskodjunk ezek kezeléséről
+- Vásárlás elindításáért felelős aloldal ahol az összes elérhető fizetés lehetőség megtekinthető. Itt ki kell listázni az adott csomagokhoz tartozó funkciókat is!
 
-- failedUrl és successUrl: Itt egy olyan oldalakat kell elhelyezni, amely tajákoztatja a Vásárlót a fizetés kimeneteléről
+- notificationUrl: Az API a fizetés közben történt eseményekről fog küldeni ide webhookot. Ezen események kezeléséről is kivetelezni kell
 
+- failedUrl és successUrl: Itt olyan oldalakra kell irányítani a bolt tulajdonost, ahol tajékoztatást kap a fizetés kimeneteléről
+
+#A Billing rendszer folyamatai
+
+A fizetési tervek hatékony átlátáshoz készítettünk egy folyamat ábrát amit lentebb csatoltunk.
+*BERAKNI NORBIÉK ÁLTAL KÉSZÍTETT FOLYAMATÁBRÁT ÉS MAGYARÁZNI HA KELL*
 
 #Egyszeri díj fizetés (One Time Charge)
 
@@ -69,7 +71,7 @@ Amire szükség lesz tehát:
 |Tulajdonság            |Leírás                                                                                                                                         |Kötelező       |Olvasható            |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|:-------------:|:-------------------:|
 |id                     | Azonosító                                                                                                                                     |               |          x          |
-|name                   | Név (pl.: Teljes verzió)                                                                                                                      |       x       |          x          |
+|name                   | Név (pl.: Teljes verzió, Havi Gold csomag, stb.)                                                                                                                      |       x       |          x          |
 |status                 | Státusz (lásd: Státuszok)                                                                                                                     |               |          x          |
 |price                  | Egy objektum, mely tartalmazza:                                                                                                               |               |          x          |
 |                       | **grossAmount**: Bruttó ár                                                                                                                    |               |                     |
@@ -78,14 +80,16 @@ Amire szükség lesz tehát:
 |                       | **roundedGrossAmount**: Kerekített bruttó ár                                                                                                  |               |                     |
 |netPrice               | Nettó ár                                                                                                                                      |       x       |          x          |
 |paymentUrl             | Fizetési url. A fizetést kezelő szolgáltatás felületének az elérésére szolgál. (A ShopRenter automatikusan kezeli az erre való átírányítást)  |               |                     |
-|notificationUrl        | A rendszerben történő eseményekről erre az Url-re küld az API értesítést                                                                      |               |          x          |
-|successUrl             | A fizetés sikeressége esetén, ide írányítjuk a Vásárlót                                                                                       |       x       |          x          |
-|failedUrl              | A fizetés meghiúsulása esetén, ide írányítjuk a Vásárlót                                                                                      |       x       |          x          |
+|notificationUrl        | A rendszerben történő eseményekről erre az Url-re küld az API webhook értesítést                                                                      |               |          x          |
+|successUrl             | A fizetés sikeressége esetén, ide írányítjuk a bolt tulajdonost                                                                                      |       x       |          x          |
+|failedUrl              | A fizetés meghiúsulása esetén, ide írányítjuk a bolt tulajdonost                                                                                     |       x       |          x          |
 |updatedAt              | Módosítás dátuma                                                                                                                              |               |          x          |
 |createdAt              | Létrehozás dátuma                                                                                                                             |               |          x          |
 |deletedAt              | Törlés dátuma                                                                                                                                 |               |          x          |
-|test                   | Ha értéke true, akkor teszt üzemmódban történik a fizetés feldolgozása                                                                        |               |          x          |
+|test                   | Ha értéke **true**, akkor teszt üzemmódban történik a fizetés feldolgozása. Számlát nem állít ki.*                                                                     |               |          x          |
 |confirmationUrl        | Létrehozás után, erre az url-re kell írányítani a Vásárlót                                                                                    |               |          x          |
+
+* Egy számla adat-összeítő emailt küld ki a rendszer bolt számlázi adataiban megadott email címre
 
 #Belépési pont
 
@@ -122,7 +126,6 @@ Erre adott válasz:
         "notificationUrl": "https://notification-webhook-url.com",
         "successUrl": "https://successUrl.com",
         "failedUrl": "https://failedUrl.com",
-        "declineNotificationUrl": "",
         "updatedAt": "2020-02-24 15:13:15",
         "createdAt": "2020-02-24 15:13:15",
         "deletedAt": null,
@@ -142,26 +145,32 @@ Erre adott válasz:
 A folyamat közben történő eseményekről folyamatosan tájékoztatja a rendszer a alkalmazást
 a notificationUrl-en keresztül.
 
-#Fizetési terv az ismétlődő díjfizetéshez
+### Működés példán keresztül
+Szeretném az alkalmazásomat egyszeri telepítési díj ellenében biztosítani a ShopRenter-es boltok számára. A telepítési díjam nem különbözik, csak egy féle összeget kell beszednem.
 
-A fizetési tervet képzeljük el úgy, mint egy tervrajzot, egy blueprintet.
+A fizetésem tehát egyszeri fizetés (One Time Charge) formájában megvásárolható nettó 10000 HUF-ért. Mivel telepítési díjat szedünk ezért a csomag neve legyen "Telepítési díj".
+A "Telepítési díj" csomag így a következő képpen fog kinézni:
 
-###Működés példán keresztül
-Szeretném az alkalmazásomat havi díjassá tenni és 3 féle havidíjas csomagot akarok hozzárendelni:
-Bronz, Szilver, Gold.
-Ez 3 különböző fizetési tervet jelent, melynek eltérnek a nevei, az árai, és esetleg a számlázási időszakai.
-
-A Bronz csomagot havidíjassá szeretném tenni, egy éves időszakra adom 10000 Nettó HUF-ért, "Az alkalmazásom Bronz csomagja" a neve:
-
-name: "Az alkalmazásom Bronz csomagja"
-billingCycleLength: 1
-billingCycleCount: 12
+name: "Telepítési díj"
+*IDE NEM TUDOM MI KELL MÉG*
 netPrice: 10000
 
-Tehát, ha a Vásárló előfizet, havonta (billingCycleLength: 1) fizet 10000 HUF Nettó összeget és ez a terhelés 12-szer (billingCycleCount: 12) történik meg.
-Magyarán: 1 évig havonta fizet 10000 HUF Nettót. (billingCycleLength * billingCycleCount)
+```javascript
+{
+    "name": "Telepítési díj",
+    "netPrice": 10000,
+    "notificationUrl": "https://notification-webhook-url.com",
+    "failedUrl": "https://failedUrl.com",
+    "successUrl": "https://successUrl.com",
+    "test": false
+}
+```
 
-###Fizetési tervek kezelése
+Tehát, ha a bolt tulajdonos előfizet, egyszeri alkalommal történik meg 10000 nettó HUF értékben.
+
+# Fizetési terv az ismétlődő díjfizetéshez
+
+## Fizetési tervek kezelése
 
 A fizetési terveinket a https://billing.shoprenter/plans oldalon tudjuk szerkeszteni.
 Bejelentkezés után listaszerűen láthatjuk a meglévő terveink, illetve újat adhatunk hozzá.
