@@ -1,4 +1,4 @@
-# Ismétlődő díj fizetés (Recurring Charge)
+# Ismétlődő díjfizetés (Recurring Charge)
 
 ## Tulajdonságok
 

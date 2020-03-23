@@ -24,7 +24,7 @@ innen, amely ismétlődő díjfizetés esetén sokban könnyíti meg a munkánka
 
 [Egyszer díj fizetés](./docs/one_time_charge.md)
 
-[Fizetési tervek az Ismétlődő díj fizetéshez](./docs/plan.md)
+[Fizetési tervek az Ismétlődő díjfizetéshez](./docs/plan.md)
 
 [Ismérlődő díj fizetés](./docs/recurring_charge.md)
 
