@@ -78,13 +78,11 @@ Erre adott válasz:
 ## Recurring Charge megszüntetése
 
 A fejlesztőknek lehetőségük van megszüntetni a Recurring Charge futását, így lezárva a fizetési cuklust.
-Egyszerűen a fent taglalt belépési pontra egy DELETE küldést küldenek a recurring charge id-val.
+Egyszerűen a fent taglalt belépési pontra egy DELETE HTTP kérést küldenek a recurring charge id-val.
 
-Fontos, hogy a rendszerből nem tűnik el
+Fontos, hogy a rendszerből nem tűnik el a 
 
 DELETE https://<shop_name>.api.shoprenter.hu/recurringCharges/<recurring_charge_id>
-
-
 
 ## Használat
 

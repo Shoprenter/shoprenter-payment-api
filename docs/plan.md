@@ -14,5 +14,5 @@ Fizetési terv létrehozása:
 
 ![Kép 2](../image/plan2.jpg)
 
-Megjegyzés: A lista oldalon, az Azonosító oszlopban lévő értékkel tudunk hivatkozni az egyes Fizetési tervekre,
+Megjegyzés: A lista oldalon, az **Azonosító** oszlopban lévő értékkel tudunk hivatkozni az egyes Fizetési tervekre,
 amikor Ismétlődő díj fizetést akarunk létrehozni az API-n keresztül.

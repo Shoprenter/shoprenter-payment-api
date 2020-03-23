@@ -18,13 +18,13 @@ innen, amely ismétlődő díjfizetés esetén sokban könnyíti meg a munkánka
 
 [Teszt üzemmód](./docs/test.md)
 
-[Sámlázási adatok és ÁFA kalkuláció](./docs/price_calc.md)
+[Számlázási adatok és ÁFA kalkuláció](./docs/price_calc.md)
 
 [Kezdeti lépések](./docs/first_steps.md)
 
 [Egyszer díj fizetés](./docs/one_time_charge.md)
 
-[Fizetési tervek az Ismétlődő díjfizetéshez](./docs/plan.md)
+[Fizetési tervek az Ismétlődő díj fizetéshez](./docs/plan.md)
 
 [Ismérlődő díj fizetés](./docs/recurring_charge.md)
 
@@ -32,4 +32,4 @@ innen, amely ismétlődő díjfizetés esetén sokban könnyíti meg a munkánka
 
 [Notification Webhook](./docs/notifications.md)
 
-[ALkalmazás törlése](./docs/uninstall.md)
+[Alkalmazás törlése](./docs/uninstall.md)

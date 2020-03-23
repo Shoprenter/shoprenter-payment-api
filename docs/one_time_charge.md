@@ -25,7 +25,7 @@
 
 * Egy számla adat-összeítő emailt küld ki a rendszer bolt számlázi adataiban megadott email címre
 
-#Belépési pont
+# Belépési pont
 
 POST https://<shop_name>.api.shoprenter.hu/oneTimeCharges
 

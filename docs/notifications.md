@@ -8,4 +8,4 @@ Ezek lehetnek a folyamat sikerességét jelző üzenetek, vagy a felmerülő hib
 | Tulajdonság | Leírás                                                |
 |-------------|-------------------------------------------------------|
 | id          | Fizetés azonosítója. Ez lehet One Time vagy Recurring |
-| status   |    Ez lesz a fizetési mód aktuális állapota              |               |
+| status   |    Ez lesz a fizetési mód aktuális állapota              |
