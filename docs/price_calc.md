@@ -24,7 +24,7 @@ Két tényező határozza meg, még pedig a bolthoz bejegyzett **ország** és a
 
 ## Hiányos számlázási adatok
 
-Előfordulthat, hogy az adott boltban, ahol a kérdéses alkalmazást telepíteni szeretnék,
+Előfordulhat, hogy az adott boltban, ahol a kérdéses alkalmazást telepíteni szeretnék,
 hiányos számlázási adatokkal rendelkezik.
 Tehát [One Time](../docs/one_time_charge.md) és [Recurring Charge](../docs/recurring_charge.md) létrehozásakor kaphatunk olyan hibaüzenetet, hogy hiányzó számlázási adatokat lát a rendszer.
 
