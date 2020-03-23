@@ -1,0 +1,15 @@
+#Státuszok
+
+A két fizetési típushoz tartoznak státuszok, melyek az adott fizetés életciklusának állapotáról adnak információt.
+Bár az első sikeres tranzakció után a két típusnak eltérő az életpályája, a fizetések által felvehető állapotok nagyrészt megegyeznek
+
+|Státusz                    |Leírás                                                                                                                                                                                                                                         |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|PENDING                    | Az újonnan létrehozott fizetés státusza. Függőben lévő                                                                                                                                                                                        |
+|ACCEPTED                   | Elfogadott vásárlás utáni állapot                                                                                                                                                                                                             |
+|ACTIVE                     | Sikeres fizetés utáni állapot                                                                                                                                                                                                                 |
+|DECLINED                   | Elutasított fizetés. Ez megtörténhet a fizetést megerősítő oldalon vagy a trankakciót lebonyolító szolgáltatás felületén                                                                                                                      |
+|EXPIRED                    | Az az Ismételt díj fizetés kerülhet ebbe a státuszba, amely véglegesen lejárt. (Nem kell tovább szedni a díjat)                                                                                                                             |
+|FROZEN                     | Az Ismételt díj fizetés esetén jöhet elő, ha a tranzakció lebonyolítása közben olyan hiba lép fel, mely a Vásárló problémás banki adatai miatt következik be                                                                                  |
+|FAILED                     | A bankkártyás fizetést lebonyolító szolgáltatásban történt olyan hiba, amely nem feloldható, nem folytatható                                                                                                                                  |
+|CANCELLED                  | Ha az Ismételt díj fizetés FROZEN állapotú, 15 nap után - ha nem sikerült ACTIVE állapotra visszaállítani - úgy ebbe az állapotba kerül. Illetve ha fizetés direkt megszakításra kerül pl.: alkalmazás törlésénél, CANCELLED lesz az státusz  |
