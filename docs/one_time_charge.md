@@ -96,7 +96,7 @@ A "Telepítési díj" csomag így a következőképpen fog kinézni:
 }
 ```
 
-Tehát, ha a bolt tulajdonos előfizet, akkor ez csak egyszeri alkalommal történik meg 10000 nettó HUF értékben.
+Tehát, ha a bolt tulajdonos előfizet, akkor ez csak egyszeri alkalommal történik meg 10000 HUF nettó értékben.
 
 ## Folyamat ábra
 
