@@ -23,3 +23,13 @@ hogy ellenőrízhetővé válljon, hogy éles fizetés esetén, milyen adatokkal
 
 Teszt Barion kártyaadatok:
 https://docs.barion.com/Sandbox
+
+Sikeres teszt kártyás fizetési adatok:
+Kártyaszám: **4444 8888 8888 5559**
+Lejárati idő: **Bármilyen jövőbeli dátum pl: 12/25**
+CVC: **Bármilyen háromjegyű szám pl: 123**
+
+Sikertelen teszt kártyás fizetési adatok:
+Kártyaszám: **4444 8888 8888 4446**
+Lejárati idő: **Bármilyen jövőbeli dátum pl: 12/25**
+CVC: **Bármilyen háromjegyű szám pl: 123**
