@@ -4,28 +4,28 @@
 
 |Tulajdonság            |Leírás                                                                                                                                                 |Kötelező       |Olvasható            |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------:|:-------------------:|
-|planId                 | Fizetési terv azonosító. (Lásd: Fizetési Terv)                                                                                                        |       x       |          x          |
+|planId                 | Fizetési terv azonosító. (Lásd: [Fizetési Terv](../docs/plan.md))                                                                                                        |       x       |          x          |
 |billingCycleLength     | Fizetési ciklus hossza. Hány havonta történik díj fizetés. pl. az 1-es érték 1 hónapot jelent (30 nap), tehát havonta történik a levonás.             |               |          x          |
-|billingCycleCount      | Fizetési ciklus száma. Hányszor történik ismételt díjfizetés. **Figyelem!** null esetén sose fog megállni a díjbeszedés                              |               |          x          |
+|billingCycleCount      | Fizetési ciklus száma. Hányszor történik ismételt díjfizetés. **Figyelem!** null esetén sose fog megállni a díjbeszedés.                              |               |          x          |
 |expirationDate         | Lejárati dátum. Azt mutatja, mikor fogja a rendszer ismételni a díj beszedését                                                                        |               |          x          |
 |id                     | Azonosító                                                                                                                                             |               |          x          |
 |name                   | Név (pl.: Teljes verzió)                                                                                                                              |               |          x          |
-|status                 | Státusz (lásd: Státuszok)                                                                                                                             |               |          x          |
+|status                 | Státusz (lásd: [Státuszok](../docs/statuses.md))                                                                                                                             |               |          x          |
 |price                  | Egy objektum, mely tartalmazza:                                                                                                                       |               |          x          |
 |                       | **grossAmount**: Bruttó ár                                                                                                                            |               |                     |
 |                       | **vatAmount**: ÁFA tartalom                                                                                                                           |               |                     |
 |                       | **netPrice**: Nettó ár                                                                                                                                |               |                     |
 |                       | **roundedGrossAmount**: Kerekített bruttó ár                                                                                                          |               |                     |
 |netPrice               | Nettó ár                                                                                                                                              |               |          x          |
-|paymentUrl             | Fizetési url. A fizetést kezelő szolgáltatás felületének az elérésére szolgál. (A ShopRenter automatikusan kezeli az erre való átírányítást)          |               |                     |
-|notificationUrl        | A rendszerben történő eseményekről erre az Url-re küld az API értesítést                                                                              |               |          x          |
-|successUrl             | A fizetés sikeressége esetén, ide írányítjuk a bolt tulajdonost                                                                                                |       x       |          x          |
-|failedUrl              | A fizetés meghiúsulása esetén, ide írányítjuk a bolt tulajdonost                                                                                               |       x       |          x          |
+|paymentUrl             | Fizetési URL. A fizetést kezelő szolgáltatás felületének az elérésére szolgál. (A ShopRenter automatikusan kezeli az erre való átirányítást.)          |               |                     |
+|notificationUrl        | A rendszerben történő eseményekről erre az URL-re küld az API értesítést                                                                              |               |          x          |
+|successUrl             | A fizetés sikeressége esetén, ide irányítjuk a bolt tulajdonost                                                                                                |       x       |          x          |
+|failedUrl              | A fizetés meghiúsulása esetén, ide irányítjuk a bolt tulajdonost                                                                                               |       x       |          x          |
 |updatedAt              | Módosítás dátuma                                                                                                                                      |               |          x          |
 |createdAt              | Létrehozás dátuma                                                                                                                                     |               |          x          |
 |deletedAt              | Törlés dátuma                                                                                                                                         |               |          x          |
 |test                   | Ha értéke true, akkor teszt üzemmódban történik a fizetés feldolgozása                                                                                |               |          x          |
-|confirmationUrl        | Létrehozás után, erre az url-re kell írányítani a bolt tulajdonost                                                                                             |               |          x          |
+|confirmationUrl        | Létrehozás után, erre az URL-re kell irányítani a bolt tulajdonost                                                                                             |               |          x          |
 
 
 # Belépési pont
@@ -77,8 +77,8 @@ Erre adott válasz:
 
 ## Recurring Charge megszüntetése
 
-A fejlesztőknek lehetőségük van megszüntetni a Recurring Charge futását, így lezárva a fizetési cuklust.
-Egyszerűen a fent taglalt belépési pontra egy DELETE HTTP kérést küldenek a recurring charge id-val.
+A fejlesztőknek lehetőségük van megszüntetni a Recurring Charge futását, így lezárva a fizetési ciklust.
+Egyszerűen, a fent taglalt belépési pontra, egy DELETE HTTP kérést kell küldeni a recurring charge ID-val.
 
 DELETE https://<shop_name>.api.shoprenter.hu/recurringCharges/<recurring_charge_id>
 
@@ -94,7 +94,7 @@ Ez 3 különböző fizetési tervet jelent, melynek eltérnek a nevei, az árai,
 A billing.shoprenter.hu/plans/create linken hozhatunk létre belépés után a terveket.
 
 A Bronz csomagot havidíjassá szeretném tenni, egy éves időszakra adom 10000 Nettó HUF-ért, "Az alkalmazásom Bronze csomagja" a neve.
-Tehát a havi díjas Bronze csomagom a következő képpen kell kinézzen:
+Tehát a havi díjas Bronze csomagom a következőképpen kell kinézzen:
 
 Fizetési terv név: "Az alkalmazásom Bronze csomagja"
 Fizetési ciklusok hossza (hónapban): 1
