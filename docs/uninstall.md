@@ -1,5 +1,4 @@
 # Alkalmazás törlése
 
-Az alkalmazás törlésénél, mint ahogy eddig is, az uninstallUrl-re érkezik egy webhook a ShopRentertől,
-melyet az alkalmazásokhoz regisztrációjához kérünk az ügyfelektől. Annyiban lett bővítve az uninstall folyamat,
-hogy az aktuálisan futó, Ismétlőd díj fizetéseket is **megszüntetjük**.
+Az alkalmazás törlés esetén, az adott boltban, a rendszer automatikusan megszünteti az aktuálisan futó, Ismétlőd díj fizetéseket **megszüntetjük**.
+Ezután, az alkalmazás regisztrációjánál megadott uninstallUrl-re a ShopRenter küld egy **GET** kérést, ezzel jelezve a törlés tényét.
