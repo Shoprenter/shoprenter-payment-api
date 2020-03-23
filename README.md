@@ -26,7 +26,7 @@ innen, amely ismétlődő díjfizetés esetén sokban könnyíti meg a munkánka
 
 [Fizetési tervek az Ismétlődő díjfizetéshez](./docs/plan.md)
 
-[Ismérlődő díj fizetés](./docs/recurring_charge.md)
+[Ismétlődő díj fizetés](./docs/recurring_charge.md)
 
 [Fizetés státuszok](./docs/statuses.md)
 
