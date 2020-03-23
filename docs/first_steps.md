@@ -11,4 +11,4 @@ Amire szükség lesz tehát:
 
 - notificationUrl: A fizetés közben történt eseményekről fog küldeni az API ide webhook-ot. Ezen események kezelését is kivitelezni kell.
 
-- failedUrl és successUrl: Itt olyan oldalakra kell irányítani a bolt tulajdonost, ahol tájékoztatást kap a fizetés kimeneteléről.
+- failedUrl és successUrl: Ezekre az oldalakra lesz irányítva a bolt tulajdonos, ahol tájékoztatást kaphat a fizetés kimeneteléről.
