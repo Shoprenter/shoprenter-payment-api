@@ -106,10 +106,10 @@ Fizetési terv nettó ára forintban: 10000
 Tehát, ha a bolt tulajdonos előfizet, havonta (billingCycleLength: 1) fizet 10000 HUF Nettó összeget és ez a terhelés 12-szer (billingCycleCount: 12) történik meg.
 Összefoglalva tehát: 1 évig havonta fizet 10000 HUF Nettót a bolt tulajdonos az alkalmazásért. (billingCycleLength * billingCycleCount)
 
-**Figyelem**: Ha Fizetési ciklusok száma mezőt üresen hagyjuk, úgy ezen fizetési terv alapján készült Ismétlődő fizetésés sose fog lejárni.
+**Figyelem**: Ha Fizetési ciklusok száma mezőt üresen hagyjuk, úgy ezen fizetési terv alapján készült Ismétlődő fizetés sose fog lejárni.
 
 ### Hiba esetén
-1. Ha a tranzakció lebonyolítása alatt olyan hiba történik, amely a vásárló kártyaadatait érinti, pl. lejárt bankkártya, úgy a Recurring Charge státusza FROZEN státuszra vált. **15 napig** próbálja a rendszer az adott ismételt díjbeszedést végrehajtani.
+1. Ha a tranzakció lebonyolítása alatt olyan hiba történik, amely a vásárló kártyaadatait érinti, pl. lejárt bankkártya, úgy a Recurring Charge státusza FROZEN státuszra vált. Ettől kezdve **15 napig** próbálja a rendszer az adott ismételt díjbeszedést végrehajtani.
 Ha nem sikerül ezentúl se folytatni a díj beszedést, úgy a adott Recurring Charge-ot a rendszer CANCELLED státuszra állítja.
 
 2. Ha a bankkártyást fizetést bonyolító szolgáltatás oldalán történt átmenti hiba, akkor óránként 4x próbálkozik a rendszer a tranzakcióval.

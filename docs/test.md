@@ -1,8 +1,7 @@
 # Teszt üzemmód
 
 Lehetőséget adunk arra, hogy a Billing API integrációját - annak fejlesztése közben - biztonságosan lehessen tesztelni.
-Ahhoz, hogy egy fizetést teszt üzemmódban indítsuk el, csak annyi a dolgunk, hogy amikor létrehozunk egy új fizetést,
-(Egyszeri vagy Ismétlődő) a payload-nak tartalmaznia kell a **test** tulajdonságot **true** értékkel.
+Ahhoz, hogy egy fizetést teszt üzemmódban indítsuk el, az új fizetést létrehozásánál, ami lehet [egyszeri](../docs/one_time_charge.md) vagy akár [ismétlődő](../docs/recurring_charge.md), a payload-nak tartalmaznia kell a **test** tulajdonságot **true** értékkel.
 
 Példa POST adatokra recurring charge esetén:
 
@@ -19,7 +18,6 @@ Példa POST adatokra recurring charge esetén:
 Ebben az esetben a bankkártyás fizetés sandbox üzemmódban indul. Számlakiállítás nem történik.
 Ehelyett, a bolt számlázási adataiban megadott email címre, egy adat összeítőt küld ki a rendszer.
 Így ellenőrízhető, hogy éles fizetés esetén is, megfelelő adatokkal állítódna ki a számla.
-
 
 Teszt Barion kártyaadatok:
 https://docs.barion.com/Sandbox
