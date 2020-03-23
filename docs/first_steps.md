@@ -1,7 +1,7 @@
 ## Kezdeti lépések
 
 Mivel a fizetési tervek létrehozásához API-t használunk, minden esetben a fejlesztőnek kell biztosítani egy felületet az alkalmazásán belül,
-ahol a bolt tulajdonos elindíthatja a fizetési folyamatot. Pl.: Ha az Ismétlődő díjfizetést vesszük alapul, az alkalmazásunk tartalmazhat
+ahol a bolt tulajdonos elindíthatja a fizetési folyamatot. Ha pl. az Ismétlődő díjfizetést vesszük alapul, az alkalmazásunk tartalmazhat
 egy olyan aloldalt, ahol különböző havi díjas csomagokat kínálhatunk. A csomag kiválasztása után, annak megfelelően POST kérést küld
 az alkalmazás a Billing API felé, hogy hozzon létre egy Ismétlődő díjfizetést.
 
@@ -9,6 +9,6 @@ Amire szükség lesz tehát:
 
 - Vásárlás elindításáért felelős aloldal ahol az összes elérhető fizetés lehetőség megtekinthető. Itt ki kell listázni az adott csomagokhoz tartozó funkciókat is!
 
-- notificationUrl: Az API a fizetés közben történt eseményekről fog küldeni ide webhookot. Ezen események kezeléséről is kivetelezni kell
+- notificationUrl: A fizetés közben történt eseményekről fog küldeni az API ide webhook-ot. Ezen események kezelését is kivitelezni kell.
 
-- failedUrl és successUrl: Itt olyan oldalakra kell irányítani a bolt tulajdonost, ahol tajékoztatást kap a fizetés kimeneteléről
+- failedUrl és successUrl: Ezekre az oldalakra lesz irányítva a bolt tulajdonos, ahol tájékoztatást kaphat a fizetés kimeneteléről.

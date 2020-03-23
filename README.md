@@ -22,11 +22,11 @@ innen, amely ismétlődő díjfizetés esetén sokban könnyíti meg a munkánka
 
 [Kezdeti lépések](./docs/first_steps.md)
 
-[Egyszer díjfizetés](./docs/one_time_charge.md)
+[Egyszeri díjfizetés](./docs/one_time_charge.md)
 
 [Fizetési tervek az Ismétlődő díjfizetéshez](./docs/plan.md)
 
-[Ismérlődő díjfizetés](./docs/recurring_charge.md)
+[Ismétlődő díjfizetés](./docs/recurring_charge.md)
 
 [Fizetés státuszok](./docs/statuses.md)
 
