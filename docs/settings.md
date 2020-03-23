@@ -18,7 +18,7 @@ A legfontosabb adat az email cím, mivel teszt üzemmódban ide fogja kiküldeni
 a számlázási adat-összesítő teszt emailt.
 
 Továbbá ugyancsak **fontos** megjegyezni, és felkészíteni alkalmazásunkat arra, hogy képes legyen az elkészített fizetési
-fizetési módok adatainak tárolására. Itt konkrétan az [Egyszeri díj fizetés](../docs/one_time_charge.md) és az [Ismétlődő díjfizetés](../docs/recurring_charge.md) létrehozása után kapott
+fizetési módok adatainak tárolására. Itt konkrétan az [Egyszeri díjfizetés](../docs/one_time_charge.md) és az [Ismétlődő díjfizetés](../docs/recurring_charge.md) létrehozása után kapott
 válasz üzenetben szereplő adatokról van szó.
 Ez azért nagyon fontos, hogy az alkalmazás fejlesztője éretelmezni tudja, hogy az [Értesítési webhookokban](../docs/notifications.md) érkező
 ID mely fizetési módhoz tartozik.

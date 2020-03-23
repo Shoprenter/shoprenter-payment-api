@@ -1,4 +1,4 @@
-# Egyszeri díj fizetés (One Time Charge)
+# Egyszeri díjfizetés (One Time Charge)
 
 ## Tulajdonságok
 

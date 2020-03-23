@@ -6,7 +6,7 @@
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------:|:-------------------:|
 |planId                 | Fizetési terv azonosító. (Lásd: Fizetési Terv)                                                                                                        |       x       |          x          |
 |billingCycleLength     | Fizetési ciklus hossza. Hány havonta történik díj fizetés. pl. az 1-es érték 1 hónapot jelent (30 nap), tehát havonta történik a levonás.             |               |          x          |
-|billingCycleCount      | Fizetési ciklus száma. Hányszor történik ismételt díj fizetés. **Figyelem!** null esetén sose fog megállni a díjbeszedés                              |               |          x          |
+|billingCycleCount      | Fizetési ciklus száma. Hányszor történik ismételt díjfizetés. **Figyelem!** null esetén sose fog megállni a díjbeszedés                              |               |          x          |
 |expirationDate         | Lejárati dátum. Azt mutatja, mikor fogja a rendszer ismételni a díj beszedését                                                                        |               |          x          |
 |id                     | Azonosító                                                                                                                                             |               |          x          |
 |name                   | Név (pl.: Teljes verzió)                                                                                                                              |               |          x          |
@@ -79,8 +79,6 @@ Erre adott válasz:
 
 A fejlesztőknek lehetőségük van megszüntetni a Recurring Charge futását, így lezárva a fizetési cuklust.
 Egyszerűen a fent taglalt belépési pontra egy DELETE HTTP kérést küldenek a recurring charge id-val.
-
-Fontos, hogy a rendszerből nem tűnik el a 
 
 DELETE https://<shop_name>.api.shoprenter.hu/recurringCharges/<recurring_charge_id>
 
