@@ -3,7 +3,7 @@
 ## Fizetési tervek kezelése
 
 A fizetési terveinket a https://billing.shoprenter/plans oldalon tudjuk szerkeszteni.
-Bejelentkezés után listaszerűen láthatjuk a meglévő terveink, illetve újat adhatunk hozzá.
+Bejelentkezés után listaszerűen láthatjuk a meglévő terveinket, illetve újat adhatunk hozzá.
 
 Fizetési terv lista oldal:
 
