@@ -89,28 +89,27 @@ Teljesen megegyezik a Egyszeri fizetés használatával. Egyedül a rendszeren b
 ### Működés példán keresztül
 Szeretném az alkalmazásomat havi díjas konstrukcióban értékesíteni. Ehhez 3 féle havidíjas csomagot akarok hozzárendelni:
 Bronze, Silver, Gold.
-Ez 3 különböző fizetési tervet jelent, melynek eltérnek a nevei, az árai, és esetleg a számlázási időszakai is.
+Ez 3 különböző fizetési tervet jelent, melynek eltérnek a nevei, az árai és esetleg a számlázási időszakai is.
 
 A billing.shoprenter.hu/plans/create linken hozhatunk létre belépés után a terveket.
 
-A Bronz csomagot havidíjassá szeretném tenni, egy éves időszakra adom 10000 Nettó HUF-ért, "Az alkalmazásom Bronze csomagja" a neve.
+A Bronz csomagot havidíjassá szeretném tenni, egy éves időszakra adom 10000 nettó HUF-ért, "Az alkalmazásom Bronze csomagja" a neve.
 Tehát a havi díjas Bronze csomagom a következőképpen kell kinézzen:
 
-Fizetési terv név: "Az alkalmazásom Bronze csomagja"
-Fizetési ciklusok hossza (hónapban): 1
-Fizetési ciklusok száma (ha üresen hagyja végtelen): 12
-Fizetési terv nettó ára forintban: 10000
+- Fizetési terv név: "Az alkalmazásom Bronze csomagja"
+- Fizetési ciklusok hossza (hónapban): 1
+- Fizetési ciklusok száma (ha üresen hagyja végtelen): 12
+- Fizetési terv nettó ára forintban: 10000
 
-Tehát, ha a bolt tulajdonos előfizet, havonta (billingCycleLength: 1) fizet 10000 HUF Nettó összeget és ez a terhelés 12-szer (billingCycleCount: 12) történik meg.
-Összefoglalva tehát: 1 évig havonta fizet 10000 HUF Nettót a bolt tulajdonos az alkalmazásért. (billingCycleLength * billingCycleCount)
+Tehát, ha a bolt tulajdonos előfizet, havonta (billingCycleLength: 1) fizet 10000 HUF nettó összeget és ez a terhelés 12-szer (billingCycleCount: 12) történik meg.
 
-**Figyelem**: Ha Fizetési ciklusok száma mezőt üresen hagyjuk, úgy ezen fizetési terv alapján készült Ismétlődő fizetés sose fog lejárni.
+Összefoglalva tehát: 1 évig havonta fizet 10000 HUF nettót a bolt tulajdonos az alkalmazásért (billingCycleLength * billingCycleCount).
+
+**Figyelem**: Ha "Fizetési ciklusok száma" mezőt üresen hagyjuk, úgy ezen fizetési terv alapján készült Ismétlődő fizetés sose fog lejárni.
 
 ### Hiba esetén
-1. Ha a tranzakció lebonyolítása alatt olyan hiba történik, amely a vásárló kártyaadatait érinti, pl. lejárt bankkártya, úgy a Recurring Charge státusza FROZEN státuszra vált. Ettől kezdve **15 napig** próbálja a rendszer az adott ismételt díjbeszedést végrehajtani.
+Ha a tranzakció lebonyolítása alatt olyan hiba történik, amely a vásárló kártyaadatait érinti, pl. lejárt bankkártya, úgy a Recurring Charge státusza FROZEN státuszra vált. Ettől kezdve **15 napig** próbálja a rendszer az adott ismételt díjbeszedést végrehajtani.
 Ha nem sikerül ezentúl se folytatni a díj beszedést, úgy a adott Recurring Charge-ot a rendszer CANCELLED státuszra állítja.
-
-2. Ha a bankkártyást fizetést bonyolító szolgáltatás oldalán történt átmenti hiba, akkor óránként 4x próbálkozik a rendszer a tranzakcióval.
 
 Természetesen itt is minden hibáról a notificationUrl értesítést kap az alkalmazás.
 
