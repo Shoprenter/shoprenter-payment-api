@@ -4,9 +4,9 @@
 
 |Tulajdonság            |Leírás                                                                                                                                                 |Kötelező       |Olvasható            |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------:|:-------------------:|
-|planId                 | Fizetési terv azonosító. (Lásd: [Fizetési Terv](../docs/plan.md))                                                                                                        |       x       |          x          |
+|planId                 | Fizetési terv azonosító. (lásd: [Fizetési Terv](../docs/plan.md))                                                                                                        |       x       |          x          |
 |billingCycleLength     | Fizetési ciklus hossza. Hány havonta történik díj fizetés. pl. az 1-es érték 1 hónapot jelent (30 nap), tehát havonta történik a levonás.             |               |          x          |
-|billingCycleCount      | Fizetési ciklus száma. Hányszor történik ismételt díjfizetés. **Figyelem!** null esetén sose fog megállni a díjbeszedés.                              |               |          x          |
+|billingCycleCount      | Fizetési ciklus száma. Hányszor történik ismételt díjfizetés. **Figyelem:** null esetén sose fog megállni a díjbeszedés!                              |               |          x          |
 |expirationDate         | Lejárati dátum. Azt mutatja, mikor fogja a rendszer ismételni a díj beszedését                                                                        |               |          x          |
 |id                     | Azonosító                                                                                                                                             |               |          x          |
 |name                   | Név (pl.: Teljes verzió)                                                                                                                              |               |          x          |
