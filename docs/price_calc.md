@@ -1,6 +1,6 @@
 # Számlázási adatok és ÁFA kalkuláció
 
-A számlázi adatokat a ShopRenter automatikusan kéri le a tulajdonos boltjából. Így külön nem igényel további intézkedést
+A számlázási adatokat a ShopRenter automatikusan kéri le a tulajdonos boltjából. Így külön nem igényel további intézkedést
 az alkalmazás fejlesztő részéről.
 
 Amit viszont feltétlen tudni kell, az az, hogy a számlázási adatok hogyan befolyásolják az aktuális ÁFA kiszámítását.
