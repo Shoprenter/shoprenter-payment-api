@@ -2,8 +2,9 @@
 
 ## Fizetési tervek kezelése
 
+Az Ismétlő díjfizetéshez elengedhetetlen, hogy fizetési tervekkel rendelkezzünk.
 A fizetési terveinket a https://billing.shoprenter/plans oldalon tudjuk szerkeszteni.
-Bejelentkezés után listaszerűen láthatjuk a meglévő terveinket, illetve újat adhatunk hozzá.
+Bejelentkezés után listaszerűen láthatjuk a meglévő terveinket, illetve újakat adhatunk hozzá.
 
 Fizetési terv lista oldal:
 
@@ -14,5 +15,14 @@ Fizetési terv létrehozása:
 
 ![Kép 2](../image/plan2.jpg)
 
-Megjegyzés: A lista oldalon, az **Azonosító** oszlopban lévő értékkel tudunk hivatkozni az egyes Fizetési tervekre,
+|Mező               |        Leírás      |
+|---------------|--------------|
+| Fizetési terv név| Itt lehet meg adni a terv nevét. Pl.: "Az alkalmazásom Bronze csomagja"|
+| Fizetési ciklusok hossza | Itt adható meg, milyen időközönként vonódjon le az alkalmazás használatért kért összeg |
+| Fizetési ciklusok száma | Itt adható meg, hogy hány alkalommal terheljük a bolt tulajdonos kártyáját|
+| Fizetési terv nettó ára forintban | A nettó ár. Az ÁFA számítását lásd: [Számlakiállítás és ÁFA kalkuláció](../docs/price_calc.md) |
+
+A lista oldalon, az **Azonosító** oszlopban lévő értékkel tudunk hivatkozni az egyes Fizetési tervekre,
 amikor Ismétlődő díjfizetést akarunk létrehozni az API-n keresztül.
+
+[Példa az Ismétlődő díjfizetésnél](../docs/recurring_charge.md)

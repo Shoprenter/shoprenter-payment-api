@@ -11,7 +11,7 @@ Minden esetben a ShopRenter nevében kerül kiállításra a számla.
 
 ### Milyen esetekben térhet el a mindenkori magyar ÁFA tartalomtól a bruttó végösszeg?
 
-Két tényező határozza meg, még pedig a bolthoz bejegyzett **ország** és a **közösségi adószám** megléte.
+Két tényező határozza meg: bolthoz bejegyzett **ország** és a **közösségi adószám** megléte.
 
 **Eszerint 4 eset lehetséges:**
 1. A bolt üzemeltetője egy magyarországi cég és nincs közösségi adószáma: **27% ÁFA**
@@ -30,5 +30,5 @@ Tehát [One Time](../docs/one_time_charge.md) és [Recurring Charge](../docs/rec
 
 40019-es hibakód.
 
-**Az üzenet tartalmazni fog egy logId-t, amelyet a partnersupport@shoprenter.hu kell elküldeni,
-hogy a ShopRenteres kollégák tudjanak intézkedni a hiányos adatok pótlásának az ügyében.**
+**Az üzenet tartalmazni fog egy logId-t, melyet a partnersupport@shoprenter.hu email címre kell elküldeni.
+ShopRenteres kollégák intézkedni fognak a hiányos adatok pótlásának az ügyében.**
