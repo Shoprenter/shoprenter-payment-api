@@ -1,7 +1,5 @@
 # ShopRenter Billing API
 
-## Figyelem! A dokumentáció az API alfa verziójához készült. Nem áll módunkban a partnereinktől regisztrációs kéréseket fogadni.
-
 ## Leírás
 
 A Billing API egy olyan eszköztár, amely olyan kártyás fizetési lehetőséget ad az alkalmazásokhoz, 
