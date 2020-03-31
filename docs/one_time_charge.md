@@ -27,7 +27,7 @@
 
 # Belépési pont
 
-POST https://<shop_name>.api.shoprenter.hu/oneTimeCharges
+POST https://<shop_name>.api.shoprenter.hu/billing/oneTimeCharges
 
 Példa payload:
 
