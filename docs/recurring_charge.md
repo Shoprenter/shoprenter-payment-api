@@ -30,7 +30,7 @@
 
 # Belépési pont
 
-POST https://<shop_name>.api.shoprenter.hu/recurringCharges
+POST https://<shop_name>.api.shoprenter.hu/billing/recurringCharges
 
 Példa payload:
 
@@ -80,7 +80,7 @@ Erre adott válasz:
 A fejlesztőknek lehetőségük van megszüntetni a Recurring Charge futását, így lezárva a fizetési ciklust.
 Egyszerűen, a fent taglalt belépési pontra, egy DELETE HTTP kérést kell küldeni a recurring charge ID-val.
 
-DELETE https://<shop_name>.api.shoprenter.hu/recurringCharges/<recurring_charge_id>
+DELETE https://<shop_name>.api.shoprenter.hu/billing/recurringCharges/<recurring_charge_id>
 
 ## Használat
 
