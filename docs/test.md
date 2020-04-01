@@ -16,7 +16,7 @@ Példa POST adatokra recurring charge esetén:
 }
 ```
 Ebben az esetben a bankkártyás fizetés sandbox üzemmódban indul. Számlakiállítás nem történik.
-Ehelyett, a bolt számlázási adataiban megadott email címre, egy adat összeítőt küld ki a rendszer.
+Ehelyett, a bolt számlázási adataiban megadott email címre, egy adat összesítőt küld ki a rendszer.
 Így ellenőrízhető, hogy éles fizetés esetén is, megfelelő adatokkal állítódna ki a számla.
 
 Teszt Barion kártyaadatok:
