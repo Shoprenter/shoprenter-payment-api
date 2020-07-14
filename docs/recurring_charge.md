@@ -24,9 +24,10 @@
 |updatedAt              | Módosítás dátuma                                                                                                                                      |               |          x          |
 |createdAt              | Létrehozás dátuma                                                                                                                                     |               |          x          |
 |deletedAt              | Törlés dátuma                                                                                                                                         |               |          x          |
-|test                   | Ha értéke true, akkor teszt üzemmódban történik a fizetés feldolgozása                                                                                |               |          x          |
+|test                   | Ha értéke **true**, akkor teszt üzemmódban történik a fizetés feldolgozása. Számlát nem állít ki. (Default: false)*                                                                                |               |          x          |
 |confirmationUrl        | Létrehozás után, erre az URL-re kell irányítani a bolt tulajdonost                                                                                             |               |          x          |
 
+\* A rendszer egy számlaadat-összesítő email-t küld ki a bolt számlázási adatainál megadott email címre.
 
 # Belépési pont
 
