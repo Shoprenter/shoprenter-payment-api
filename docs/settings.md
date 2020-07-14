@@ -16,6 +16,7 @@ Tehát ha több alkalmazásunk van, minden alkalmazáshoz külön hozzáférést
 Az igényelt teszt bolt számlázási adatait minden esetben a megfelelő adatokkal töltsük ki, hiszen hiányos számlázási adatok esetén, a rendszer nem képes számlát kiállítani, így ezen beállítások hiánya a fizetések létrehozását is gátolja.
 A legfontosabb adat az email cím, mivel teszt üzemmódban ide fogja kiküldeni a rendszer
 a számlázási adat-összesítő teszt emailt.
+Minden ide vonatkozó adatot a teszt bolt admin felületén a "Fiókom" menüpontban tudnak módosítani. Link: https://valami.shoprenter.hu/admin/sales/account#/billingaddress
 
 Továbbá ugyancsak **fontos** megjegyezni, és felkészíteni alkalmazásunkat arra, hogy képes legyen az elkészített fizetési
 fizetési módok adatainak tárolására. Itt konkrétan az [Egyszeri díjfizetés](../docs/one_time_charge.md) és az [Ismétlődő díjfizetés](../docs/recurring_charge.md) létrehozása után kapott
