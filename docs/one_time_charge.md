@@ -26,7 +26,7 @@
 
 # Belépési pont
 
-POST https://<shop_name>.api.shoprenter.hu/billing/oneTimeCharges
+POST https://<shop_name>.shoprenter.hu/billing/oneTimeCharges
 
 Példa payload:
 
@@ -63,7 +63,7 @@ Erre adott válasz:
     "createdAt": "2020-02-24 15:13:15",
     "deletedAt": null,
     "test": true,
-    "confirmationUrl": "https://<shop_name>.api.shoprenter.hu/admin/app/payment/onetime/5"
+    "confirmationUrl": "https://<shop_name>.shoprenter.hu/admin/app/payment/onetime/5"
 }
 ```
 
