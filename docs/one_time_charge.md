@@ -13,7 +13,6 @@
 |                       | **netPrice**: Nettó ár                                                                                                                        |               |                     |
 |                       | **roundedGrossAmount**: Kerekített bruttó ár                                                                                                  |               |                     |
 |netPrice               | Nettó ár                                                                                                                                      |       x       |          x          |
-|paymentUrl             | Fizetési URL. A fizetést kezelő szolgáltatás felületének az elérésére szolgál. (A ShopRenter automatikusan kezeli az erre való átirányítást.)  |               |                     |
 |notificationUrl        | A rendszerben történő eseményekről erre az URL-re küld az egy API webhook értesítést                                                                      |               |          x          |
 |successUrl             | A fizetés sikeressége esetén, ide irányítjuk a bolt tulajdonost                                                                                      |       x       |          x          |
 |failedUrl              | A fizetés meghiúsulása esetén, ide irányítjuk a bolt tulajdonost                                                                                     |       x       |          x          |
@@ -71,7 +70,7 @@ Erre adott válasz:
 ## Használat
 1. Létrehozok POST kéréssel egy új oneTimeCharge-ot
 2. A válaszban megkapom a confirmationUrl-t, melyre átirányítom az aktuális vásárlót
-3. A aktuális vásárló átkerül a ShopRenter fizetést megerősítő oldalára
+3. A aktuális vásárló átkerül a Shoprenter fizetést megerősítő oldalára
 4. A aktuális vásárló eldönti, hogy elfogadja, vagy elutasítja a vásárlást. Elutasítás esetén, az alkalmazás belépési pontjára irányít vissza a rendszer.
 5. Ha elfogadta, átirányítódik a tranzakciót lebonyolító szolgáltatás felületére.
 6. Sikeres fizetés esetén a successUrl-re irányítja a rendszer a vásárlót, sikertelenség esetén a failedUrl-re.
@@ -80,7 +79,7 @@ A folyamat közben történő eseményekről folyamatosan tájékoztatja a rends
 a notificationUrl-en keresztül.
 
 ### Működés példán keresztül
-Szeretném az alkalmazásomat egyszeri telepítési díj ellenében biztosítani a ShopRenter-es boltok számára. A telepítési díjam nem különbözik, csak egyféle összeget kell beszednem.
+Szeretném az alkalmazásomat egyszeri telepítési díj ellenében biztosítani a Shoprenter-es boltok számára. A telepítési díjam nem különbözik, csak egyféle összeget kell beszednem.
 
 A fizetésem tehát egyszeri fizetés (One Time Charge) formájában megvásárolható nettó 10000 HUF-ért. Mivel telepítési díjat szedünk, ezért a csomag neve legyen pl. "Telepítési díj".
 A "Telepítési díj" csomag így a következőképpen fog kinézni:
