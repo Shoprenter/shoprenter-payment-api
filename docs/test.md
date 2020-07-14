@@ -8,7 +8,6 @@ Példa POST adatokra recurring charge esetén:
 ```javascript
 {
     "planId": 1,
-    "returnUrl": "https://returnUrl.com",
     "notificationUrl": "https://notification-webhook-url.com",
     "failedUrl": "https://failedUrl.com",
     "successUrl": "https://successUrl.com",
