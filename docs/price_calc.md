@@ -25,10 +25,10 @@ Két tényező határozza meg: bolthoz bejegyzett **ország** és a **közössé
 ## Hiányos számlázási adatok
 
 Előfordulhat, hogy az adott boltban, ahol a kérdéses alkalmazást telepíteni szeretnék,
-hiányos számlázási adatokkal rendelkezik.
-Tehát [One Time](../docs/one_time_charge.md) és [Recurring Charge](../docs/recurring_charge.md) létrehozásakor kaphatunk olyan hibaüzenetet, hogy hiányzó számlázási adatokat lát a rendszer.
+hiányos számlázási adatokkal rendelkezik. 
+Tehát [One Time](../docs/one_time_charge.md) és [Recurring Charge](../docs/recurring_charge.md) létrehozásakor kaphatunk olyan hibaüzenetet, hogy hiányzó számlázási adatokat lát a rendszer. Ez a 40019-es hibakód.
 
-40019-es hibakód.
+Ebben az esetben az alkalmazásnak kell felhívnia a bolt üzemeltetőjének figyelmét arra, hogy az admin felület "Fiókom" menüpontjában pótolja a hiányzó számlázási adatokat.
 
 **Az üzenet tartalmazni fog egy logId-t, melyet a partnersupport@shoprenter.hu email címre kell elküldeni.
 ShopRenteres kollégák intézkedni fognak a hiányos adatok pótlásának az ügyében.**
