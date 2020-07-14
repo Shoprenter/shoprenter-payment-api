@@ -19,8 +19,7 @@ a számlázási adat-összesítő teszt emailt.
 
 Minden ide vonatkozó adatot a teszt bolt admin felületén a "Fiókom" menüpontban tudnak módosítani. Link: https://valami.shoprenter.hu/admin/sales/account#/billingaddress
 
-Továbbá ugyancsak **fontos** megjegyezni, és felkészíteni alkalmazásunkat arra, hogy képes legyen az elkészített fizetési
-fizetési módok adatainak tárolására. Itt konkrétan az [Egyszeri díjfizetés](../docs/one_time_charge.md) és az [Ismétlődő díjfizetés](../docs/recurring_charge.md) létrehozása után kapott
+Továbbá ugyancsak **fontos** megjegyezni, és felkészíteni alkalmazásunkat arra, hogy képes legyen az elkészített fizetési módok adatainak tárolására. Itt konkrétan az [Egyszeri díjfizetés](../docs/one_time_charge.md) és az [Ismétlődő díjfizetés](../docs/recurring_charge.md) létrehozása után kapott
 válasz üzenetben szereplő adatokról van szó.
 Ez azért nagyon fontos, hogy az alkalmazás fejlesztője éretelmezni tudja, hogy az [Értesítési webhookokban](../docs/notifications.md) érkező
 ID mely fizetési módhoz tartozik.
