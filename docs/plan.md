@@ -3,7 +3,7 @@
 ## Fizetési tervek kezelése
 
 Az Ismétlő díjfizetéshez elengedhetetlen, hogy fizetési tervekkel rendelkezzünk.
-A fizetési terveinket a https://billing.shoprenter/plans oldalon tudjuk szerkeszteni.
+A fizetési terveinket a https://billing.shoprenter.hu/plans oldalon tudjuk szerkeszteni.
 Bejelentkezés után listaszerűen láthatjuk a meglévő terveinket, illetve újakat adhatunk hozzá.
 
 Fizetési terv lista oldal:
