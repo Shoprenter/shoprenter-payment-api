@@ -10,4 +10,4 @@ http://billing.shoprenter.hu/login
 
 A login felületen, a már [korábban említett regisztráció](../docs/settings.md) során kapott felhasználó név/token párossal tudunk belépni az alkalmazáshoz tartozó dashboardra.
 
-FONTOS: Nem szükséges a meglévő alkalmazás telepítéseket megismételni a Billing API integrációja után.
+FONTOS: A Billing API integrációja után az alkalmazások újratelepítése nem szükséges.
