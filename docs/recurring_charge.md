@@ -17,7 +17,6 @@
 |                       | **netPrice**: Nettó ár                                                                                                                                |               |                     |
 |                       | **roundedGrossAmount**: Kerekített bruttó ár                                                                                                          |               |                     |
 |netPrice               | Nettó ár                                                                                                                                              |               |          x          |
-|paymentUrl             | Fizetési URL. A fizetést kezelő szolgáltatás felületének az elérésére szolgál. (A ShopRenter automatikusan kezeli az erre való átirányítást.)          |               |                     |
 |notificationUrl        | A rendszerben történő eseményekről erre az URL-re küld az API értesítést                                                                              |               |          x          |
 |successUrl             | A fizetés sikeressége esetén, ide irányítjuk a bolt tulajdonost                                                                                                |       x       |          x          |
 |failedUrl              | A fizetés meghiúsulása esetén, ide irányítjuk a bolt tulajdonost                                                                                               |       x       |          x          |
@@ -38,7 +37,6 @@ Példa payload:
 ```javascript
 {
     "planId": 1,
-    "returnUrl": "https://returnUrl.com",
     "notificationUrl": "https://notification-webhook-url.com",
     "failedUrl": "https://failedUrl.com",
     "successUrl": "https://successUrl.com",
