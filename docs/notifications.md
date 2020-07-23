@@ -1,11 +1,23 @@
 # Értesítés webhookok - a notificationUrl
 
-A Billing API a fizetési folyamat közben történő események üzeneteit a notificationUrl tulajdonságnál megadott URL-re küldi el.
-Ezek lehetnek a folyamat sikerességét jelző üzenetek, vagy a felmerülő hibák jelzései.
+A Billing API, a fizetési folyamat közben történő események üzeneteit a notificationUrl tulajdonságnál megadott URL-re küldi el.
+A webhook tartalmazza a fizetési mód azonosítóját és a aktuális állapotát. A kérés HTTP metódusa **POST**.
 
-## Válasz üzenet felépítése
+A státuszok vizsgálatával következtethetünk egy fizetési mód életciklusában bekövetkezett változásokra, esetleges hibákra.
+A lehetséges státuszok: [Elérhető státuszok](../docs/statuses.md)
+
+## Az üzenet felépítése
 
 | Tulajdonság | Leírás                                                |
 |-------------|-------------------------------------------------------|
 | id          | Fizetés azonosítója. Ez lehet One Time vagy Recurring |
-| status   |    Ez lesz a fizetési mód aktuális állapota. [Elérhető státuszok](../docs/statuses.md)              |
+| status   |    A fizetési mód aktuális állapota |
+
+## Példa:
+
+```javascript
+{
+    "id": 2,
+    "status": "pending"
+}
+```
