@@ -4,7 +4,7 @@ A Billing API, a fizetési folyamat közben történő események üzeneteit a n
 A webhook tartalmazza a fizetési mód azonosítóját és a aktuális állapotát. A Billing API által küldött webhook kérés HTTP metódusa **POST**.
 
 A státuszok vizsgálatával következtethetünk egy fizetési mód életciklusában bekövetkezett változásokra, esetleges hibákra.
-A lehetséges státuszok: [Elérhető státuszok](../docs/statuses.md)
+A lehetséges státuszok itt érhetőek el: [Elérhető státuszok](../docs/statuses.md)
 
 ## Az üzenet felépítése
 
