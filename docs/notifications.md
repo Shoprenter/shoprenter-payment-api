@@ -1,7 +1,7 @@
 # Értesítés webhookok - a notificationUrl
 
 A Billing API, a fizetési folyamat közben történő események üzeneteit a notificationUrl tulajdonságnál megadott URL-re küldi el.
-A webhook tartalmazza a fizetési mód azonosítóját és a aktuális állapotát. A kérés HTTP metódusa **POST**.
+A webhook tartalmazza a fizetési mód azonosítóját és a aktuális állapotát. A Billing API által küldött webhook kérés HTTP metódusa **POST**.
 
 A státuszok vizsgálatával következtethetünk egy fizetési mód életciklusában bekövetkezett változásokra, esetleges hibákra.
 A lehetséges státuszok: [Elérhető státuszok](../docs/statuses.md)
