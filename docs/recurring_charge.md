@@ -25,6 +25,7 @@
 |deletedAt              | Törlés dátuma                                                                                                                                         |               |          x          |
 |test                   | Ha értéke **true**, akkor teszt üzemmódban történik a fizetés feldolgozása. Számlát nem állít ki. (Default: false)*                                                                                |               |          x          |
 |confirmationUrl        | Létrehozás után, erre az URL-re kell irányítani a bolt tulajdonost                                                                                             |               |          x          |
+|trialDays              | Próbaidőszakos napok száma, amit az app tulajdonosa nem számít fel a Vásárlónak. Ezen napok számának a csúsztatásával kerül kiállításra a számla. Alapértelmezetten ez 0 nap, viszont akár negatív értéket is felvehet. (lásd: [Próbaidőszakos ismétlődő díjfizetés](#test) )                                                                                             |               |          x          |
 
 \* A rendszer egy számlaadat-összesítő email-t küld ki a bolt számlázási adatainál megadott email címre.
 
@@ -40,7 +41,8 @@ Példa payload:
     "notificationUrl": "https://notification-webhook-url.com",
     "failedUrl": "https://failedUrl.com",
     "successUrl": "https://successUrl.com",
-    "test": true
+    "test": true,
+    "trialDays": 10
 }
 ```
 
@@ -52,6 +54,7 @@ Erre adott válasz:
     "billingCycleLength": 1,
     "billingCycleCount": 12,
     "expirationDate": null,
+    "trialDays": 10,
     "id": 5,
     "name": "ACME alkalmazás Gold Csomagja",
     "status": "pending",
@@ -115,3 +118,11 @@ Természetesen itt is minden hibáról a notificationUrl értesítést kap az al
 ## Folyamat ábra
 
 ![One Time Charge](../image/Recurring%20Charge%20flow.png)
+
+## test
+
+Egy előfizetés létrehozásánál... 
+
+### Pozitív próbaidőszakos ismétlődő díjfizetés (Positive Trial Recurring Charge)
+
+### Negatív próbaidőszakos ismétlődő díjfizetés (Negative Trial Recurring Charge)
