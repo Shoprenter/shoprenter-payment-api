@@ -25,7 +25,7 @@
 |deletedAt              | Törlés dátuma                                                                                                                                         |               |          x          |
 |test                   | Ha értéke **true**, akkor teszt üzemmódban történik a fizetés feldolgozása. Számlát nem állít ki. (Default: false)*                                                                                |               |          x          |
 |confirmationUrl        | Létrehozás után, erre az URL-re kell irányítani a bolt tulajdonost                                                                                             |               |          x          |
-|trialDays              | Próbaidőszakos napok száma, amit az app tulajdonosa nem számít fel a Vásárlónak. Ezen napok számának a csúsztatásával kerül kiállításra a számla. Alapértelmezetten ez 0 nap, viszont akár negatív értéket is felvehet. (lásd: [Próbaidőszakos ismétlődő díjfizetés](#test) )                                                                                             |               |          x          |
+|trialDays              | Próbaidőszakos napok száma, amit az app tulajdonosa nem számít fel a Vásárlónak. Ezen napok számának a csúsztatásával kerül kiállításra a számla. Alapértelmezetten ez 0 nap, viszont akár negatív értéket is felvehet. (lásd: [Próbaidőszakos ismétlődő díjfizetés](#probaidoszakos-ismetlodo-dijfizetes-trial-recurring-charge) )                                                                                             |               |          x          |
 
 \* A rendszer egy számlaadat-összesítő email-t küld ki a bolt számlázási adatainál megadott email címre.
 
@@ -119,7 +119,7 @@ Természetesen itt is minden hibáról a notificationUrl értesítést kap az al
 
 ![One Time Charge](../image/Recurring%20Charge%20flow.png)
 
-## test
+## Próbaidőszakos ismétlődő díjfizetés (Trial Recurring Charge)
 
 Egy előfizetés létrehozásánál... 
 
