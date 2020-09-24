@@ -162,9 +162,7 @@ A negatív próbaidőszakos ismétlődő díjfizetés megértéséhez egy kicsit
 A negatív próbaidőszakos ismétlődő díjfizetés egy eszköz azokra az **aktív előfizetőkre**, akik eddig ugyan használták az appot, de a Billing API használata előtt más módon kérték be tőlük a díjakat és állították ki a számlákat.
 Annak érdekében, hogy ezentúl a Billing API-val lehessen a már futó időszakra bekérni a díjat és számlát lehessen kiállítani, olyan előfizetést kell létrehozni, amely kezdete egy múltbéli dátum. Ennek megadására szolgál a **trialDays property megadása negatív értékkel.**
 
-Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és szeretne áttérni a Billing API rendszerébe, akkor úgy kell létrehozni az előfizetést, hogy a **trialDays propertynek -24 -et kell megadni**. 
-
-**FONTOS:** Negatív próbaidőszakos ismétlődő díjfizetésnél a trialDays értéke nem lehet nagyobb, mint a billingCycleLength abszolút értéke, máskülönben hibát fog dobni. Ha például egy előfizetési ciklus hossza 120 nap (billingCycleLength = 4), akkor a trialDays nem lehet kisebb -120-nál, azaz nem lehet -121, -122...stb. A pozitív próbaidőszakos ismétlődő díjfizetésnél nincs ilyen korlátozás.  
+Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és szeretne áttérni a Billing API rendszerébe, akkor úgy kell létrehozni az előfizetést, hogy a **trialDays propertynek -24 -et kell megadni**.   
 
 #### Példa
 
@@ -191,3 +189,4 @@ Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és sz
     </tr>
 </table>
 
+**FONTOS:** Negatív próbaidőszakos ismétlődő díjfizetésnél a trialDays abszolút értéke nem lehet nagyobb, mint a billingCycleLength napokban kifejezett értéke, máskülönben hibát fog dobni. Ha például egy előfizetési ciklus hossza 120 nap (billingCycleLength = 4), akkor a trialDays nem lehet kisebb -120-nál, azaz nem lehet -121, -122...stb. A pozitív próbaidőszakos ismétlődő díjfizetésnél nincs ilyen korlátozás.
