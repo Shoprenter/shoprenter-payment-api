@@ -129,8 +129,8 @@ Annak érdekében, hogy az előfizetés megtörténjen, de a számlán csak a 20
 
 #### Példa
 
-|   |   |   |   |   |
-|---|---|---|---|---|
+|   |   |
+|---|---|
 |Alkalmazás telepítésének dátuma  | **2020-09-01**  |
 |Felajánlott ingyenes próbanapok száma  | **30**  |
 |Előfizetés elindításának dátuma  | **2020-09-10**  |
@@ -148,8 +148,8 @@ Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és sz
 
 #### Példa
 
-|   |   |   |   |   |
-|---|---|---|---|---|
+|   |   |
+|---|---|
 |Új előfizetési ciklus kezdete az app tulajdonos rendszerében  | **2020-09-01**  |
 |Előfizetési ciklus hossza napokban| **90**|
 |Előfizetés elindításának dátuma a Billing API rendszerében | **2020-09-24**  |
