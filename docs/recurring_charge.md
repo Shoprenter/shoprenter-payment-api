@@ -5,8 +5,8 @@
 |Tulajdonság            |Leírás                                                                                                                                                 |Kötelező       |Olvasható            |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------:|:-------------------:|
 |planId                 | Fizetési terv azonosító. (lásd: [Fizetési Terv](../docs/plan.md))                                                                                                        |       x       |          x          |
-|billingCycleLength     | Fizetési ciklus hossza. Hány havonta történik díj fizetés. pl. az 1-es érték 1 hónapot jelent (30 nap), tehát havonta történik a levonás.             |               |          x          |
-|billingCycleCount      | Fizetési ciklus száma. Hányszor történik ismételt díjfizetés. **Figyelem:** null esetén sose fog megállni a díjbeszedés!                              |               |          x          |
+|billingCycleLength     | Fizetési ciklus hossza. Hány havonta történik díj fizetés.<br/>Pl.: az 1-es érték 1 hónapot jelent (30 nap), tehát havonta történik a levonás.             |               |          x          |
+|billingCycleCount      | Fizetési ciklus száma. Hányszor történik ismételt díjfizetés. <br/>**Figyelem:** null esetén sose fog megállni a díjbeszedés!                              |               |          x          |
 |expirationDate         | Lejárati dátum. Azt mutatja, mikor fogja a rendszer ismételni a díj beszedését                                                                        |               |          x          |
 |id                     | Azonosító                                                                                                                                             |               |          x          |
 |name                   | Név (pl.: Teljes verzió)                                                                                                                              |               |          x          |
@@ -25,7 +25,7 @@
 |deletedAt              | Törlés dátuma                                                                                                                                         |               |          x          |
 |test                   | Ha értéke **true**, akkor teszt üzemmódban történik a fizetés feldolgozása. Számlát nem állít ki. (Default: false)*                                                                                |               |          x          |
 |confirmationUrl        | Létrehozás után, erre az URL-re kell irányítani a bolt tulajdonost                                                                                             |               |          x          |
-|trialDays              | Próbaidőszakos napok száma, amit az app tulajdonosa nem számít fel az app felhasználójának. Ezen napok számának a csúsztatásával kerül kiállításra a számla. Alapértelmezetten ez 0 nap (lásd: [Próbaidőszakos ismétlődő díjfizetés (Trial Recurring Charge)](#próbaidőszakos-ismétlődő-díjfizetés-trial-recurring-charge)).                                                                                           |               |          x          |
+|trialDays              | Próbaidőszakos napok száma, amit az app tulajdonosa nem számít fel az app felhasználójának. Ezen napok számának a csúsztatásával kerül kiállításra a számla. Alapértelmezetten ez 0 nap<br/>(lásd: [Próbaidőszakos ismétlődő díjfizetés (Trial Recurring Charge)](#próbaidőszakos-ismétlődő-díjfizetés-trial-recurring-charge)).                                                                                           |               |          x          |
 
 \* A rendszer egy számlaadat-összesítő email-t küld ki a bolt számlázási adatainál megadott email címre.
 
@@ -162,7 +162,7 @@ A negatív próbaidőszakos ismétlődő díjfizetés megértéséhez egy kicsit
 A negatív próbaidőszakos ismétlődő díjfizetés egy eszköz azokra az **aktív előfizetőkre**, akik eddig ugyan használták az appot, de a Billing API használata előtt más módon kérték be tőlük a díjakat és állították ki a számlákat.
 Annak érdekében, hogy ezentúl a Billing API-val lehessen a már futó időszakra bekérni a díjat és számlát lehessen kiállítani, olyan előfizetést kell létrehozni, amely kezdete egy múltbéli dátum. Ennek megadására szolgál a **trialDays property megadása negatív értékkel.**
 
-Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és szeretne áttérni a Billing API rendszerében, akkor úgy kell létrehozni az előfizetést, hogy a **trialDays propertynek -24 -et kell megadni**. 
+Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és szeretne áttérni a Billing API rendszerébe, akkor úgy kell létrehozni az előfizetést, hogy a **trialDays propertynek -24 -et kell megadni**. 
 
 #### Példa
 
