@@ -119,8 +119,12 @@ Természetesen itt is minden hibáról a notificationUrl értesítést kap az al
 
 ![One Time Charge](../image/Recurring%20Charge%20flow.png)
 
-## Próbaidőszakos ismétlődő díjfizetés (Trial Recurring Charge)
+## Próbaidőszakos ismétlődő díjfizetés (Trial Recurring Charge) 
 
 ### Pozitív próbaidőszakos ismétlődő díjfizetés (Positive Trial Recurring Charge)
+
+Az app tulajdonosa élhet azzal a lehetőséggel, hogy az app leendő vásárlójának próbaidőszak formájában ingyenesen a rendelkezésére bocsátja az app összes vagy csak némely funkcionalitását egy meghatározott időszakra pl: 30 napra.
+Tegyük fel, hogy az app felhasználója a próbaidőszak alatt úgy dönt, hogy számára értékes az app és ezért előfizet, ellenben szeretne még élni a fennmaradó 20 napos ingyenes próbaidőszakkal.
+Annak érdekében, hogy az előfizetés megtörténjen, de a számlán csak a 20 nappal későbbi dátum szerepeljen, illetve a későbbi levonások is ennek függvényében történjenek a Billing API segítségével úgy kell létrehozunk az előfizetést, hogy a **trialDays** propertynek átadjuk a fennmaradó 20 napot.
 
 ### Negatív próbaidőszakos ismétlődő díjfizetés (Negative Trial Recurring Charge)
