@@ -148,18 +148,26 @@ Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és sz
 
 #### Példa
 
-|Esemény|Érték|
-|---|---|
-|Új előfizetési ciklus kezdete az app tulajdonos rendszerében  | **2020-09-01**  |
-|Előfizetési ciklus hossza napokban| **90**|
-|Előfizetés elindításának dátuma a Billing API rendszerében | **2020-09-24**  |
-|Számlakiállításához ennyi nappal kell visszadatálni | **-24**  |
-|Előfizetés első időszakáról kiálított számlán megjelenő dátum| **2020-09-01 - 2020-11-30**|
-
 <table>
     <tr>
         <td>Új előfizetési ciklus kezdete az app tulajdonos rendszerében</td>
-        <td>**2020-09-01**</td>
+        <td><strong>2020-09-01</strong></td>
+    </tr>
+    <tr>
+        <td>Előfizetési ciklus hossza napokban</td>
+        <td><strong>90</strong></td>
+    </tr>
+    <tr>
+        <td>Előfizetés elindításának dátuma a Billing API rendszerében</td>
+        <td><strong>2020-09-24</strong></td>
+    </tr>
+    <tr>
+        <td>Számlakiállításához ennyi nappal kell visszadatálni</td>
+        <td><strong>-24</strong></td>
+    </tr>
+    <tr>
+        <td>Előfizetés első időszakáról kiálított számlán megjelenő dátum</td>
+        <td><strong>2020-09-01 - 2020-11-30</strong></td>
     </tr>
 </table>
 
