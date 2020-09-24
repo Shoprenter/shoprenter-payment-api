@@ -156,3 +156,10 @@ Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és sz
 |Számlakiállításához ennyi nappal kell visszadatálni | **-24**  |
 |Előfizetés első időszakáról kiálított számlán megjelenő dátum| **2020-09-01 - 2020-11-30**|
 
+<table>
+    <tr>
+        <td>Új előfizetési ciklus kezdete az app tulajdonos rendszerében</td>
+        <td>**2020-09-01**</td>
+    </tr>
+</table>
+
