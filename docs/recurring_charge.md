@@ -164,6 +164,8 @@ Annak érdekében, hogy ezentúl a Billing API-val lehessen a már futó idősza
 
 Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és szeretne áttérni a Billing API rendszerébe, akkor úgy kell létrehozni az előfizetést, hogy a **trialDays propertynek -24 -et kell megadni**. 
 
+**FONTOS:** Negatív próbaidőszakos ismétlődő díjfizetésnél a trialDays értéke nem lehet nagyobb, mint a billingCycleLength abszolút értéke, máskülönben hibát fog dobni. Ha például egy előfizetési ciklus hossza 120 nap (billingCycleLength = 4), akkor a trialDays nem lehet kisebb -120-nál, azaz nem lehet -121, -122...stb. A pozitív próbaidőszakos ismétlődő díjfizetésnél nincs ilyen korlátozás.  
+
 #### Példa
 
 <table>
