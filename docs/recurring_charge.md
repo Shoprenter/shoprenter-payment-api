@@ -129,14 +129,32 @@ Annak érdekében, hogy az előfizetés megtörténjen, de a számlán csak a 20
 
 #### Példa
 
-|Esemény|Érték|
-|---|---|
-|Alkalmazás telepítésének dátuma  | **2020-09-01**  |
-|Felajánlott ingyenes próbanapok száma  | **30**  |
-|Előfizetés elindításának dátuma  | **2020-09-10**  |
-|Előfizetés után fennmaradó ingyenes napok száma  | **20**  |
-|Előfizetési ciklus hossza napokban  | **30**  |
-|Előfizetés első időszakáról kiálított számlán megjelenő dátum| **2020-10-01 - 2020-10-30**|
+<table>
+    <tr>
+        <td>Alkalmazás telepítésének dátuma</td>
+        <td><strong>2020-09-01</strong></td>
+    </tr>
+    <tr>
+        <td>Felajánlott ingyenes próbanapok száma</td>
+        <td><strong>30</strong></td>
+    </tr>
+    <tr>
+        <td>Előfizetés elindításának dátuma</td>
+        <td><strong>2020-09-10</strong></td>
+    </tr>
+    <tr>
+        <td>Előfizetés után fennmaradó ingyenes napok száma</td>
+        <td><strong>20</strong></td>
+    </tr>
+    <tr>
+        <td>Előfizetési ciklus hossza napokban</td>
+        <td><strong>30</strong></td>
+    </tr>
+    <tr>
+        <td>Előfizetés első időszakáról kiálított számlán megjelenő dátum</td>
+        <td><strong>2020-10-01 - 2020-10-30</strong></td>
+    </tr>
+</table>
 
 ### Negatív próbaidőszakos ismétlődő díjfizetés (Negative Trial Recurring Charge)
 
