@@ -129,7 +129,7 @@ Annak érdekében, hogy az előfizetés megtörténjen, de a számlán csak a 20
 
 #### Példa
 
-|Művelet|Érték|
+|Esemény|Érték|
 |---|---|
 |Alkalmazás telepítésének dátuma  | **2020-09-01**  |
 |Felajánlott ingyenes próbanapok száma  | **30**  |
@@ -148,7 +148,7 @@ Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és sz
 
 #### Példa
 
-|Művelet|Érték|
+|Esemény|Érték|
 |---|---|
 |Új előfizetési ciklus kezdete az app tulajdonos rendszerében  | **2020-09-01**  |
 |Előfizetési ciklus hossza napokban| **90**|
