@@ -25,7 +25,7 @@
 |deletedAt              | Törlés dátuma                                                                                                                                         |               |          x          |
 |test                   | Ha értéke **true**, akkor teszt üzemmódban történik a fizetés feldolgozása. Számlát nem állít ki. (Default: false)*                                                                                |               |          x          |
 |confirmationUrl        | Létrehozás után, erre az URL-re kell irányítani a bolt tulajdonost                                                                                             |               |          x          |
-|trialDays              | Próbaidőszakos napok száma, amit az app tulajdonosa nem számít fel a Vásárlónak. Ezen napok számának a csúsztatásával kerül kiállításra a számla. Alapértelmezetten ez 0 nap, viszont akár negatív értéket is felvehet.                                                                                           |               |          x          |
+|trialDays              | Próbaidőszakos napok száma, amit az app tulajdonosa nem számít fel az app felhasználójának. Ezen napok számának a csúsztatásával kerül kiállításra a számla. Alapértelmezetten ez 0 nap, viszont akár negatív értéket is felvehet (lásd: [Próbaidőszakos ismétlődő díjfizetés (Trial Recurring Charge)](#próbaidőszakos-ismétlődő-díjfizetés-trial-recurring-charge))                                                                                           |               |          x          |
 
 \* A rendszer egy számlaadat-összesítő email-t küld ki a bolt számlázási adatainál megadott email címre.
 
@@ -125,6 +125,34 @@ Természetesen itt is minden hibáról a notificationUrl értesítést kap az al
 
 Az app tulajdonosa élhet azzal a lehetőséggel, hogy az app leendő vásárlójának próbaidőszak formájában ingyenesen a rendelkezésére bocsátja az app összes vagy csak némely funkcionalitását egy meghatározott időszakra pl: 30 napra.
 Tegyük fel, hogy az app felhasználója a próbaidőszak alatt úgy dönt, hogy számára értékes az app és ezért előfizet, ellenben szeretne még élni a fennmaradó 20 napos ingyenes próbaidőszakkal.
-Annak érdekében, hogy az előfizetés megtörténjen, de a számlán csak a 20 nappal későbbi dátum szerepeljen, illetve a későbbi levonások is ennek függvényében történjenek a Billing API segítségével úgy kell létrehozunk az előfizetést, hogy a **trialDays** propertynek átadjuk a fennmaradó 20 napot.
+Annak érdekében, hogy az előfizetés megtörténjen, de a számlán csak a 20 nappal későbbi dátum szerepeljen, illetve a későbbi levonások is ennek függvényében történjenek, ezért a Billing API segítségével úgy kell létrehozunk az előfizetést, hogy a **trialDays propertynek átadjuk a fennmaradó 20 napot.**
+
+#### Példa
+
+|   |   |   |   |   |
+|---|---|---|---|---|
+|Alkalmazás telepítésének dátuma  | **2020-09-01**  |
+|Felajánlott ingyenes próbanapok száma  | **30**  |
+|Előfizetés elindításának dátuma  | **2020-09-10**  |
+|Előfizetés után fennmaradó ingyenes napok száma  | **20**  |
+|Előfizetési ciklus hossza napokban  | **30**  |
+|Előfizetés első időszakáról kiálított számlán megjelenő dátum| **2020-10-01 - 2020-10-30**|
 
 ### Negatív próbaidőszakos ismétlődő díjfizetés (Negative Trial Recurring Charge)
+
+A negatív próbaidőszakos ismétlődő díjfizetés megértéséhez egy kicsit el kell vonatkoztatunk az előbbi pozitív ismétlődő díjfizetés használatánál olvasottaktól.
+A negatív próbaidőszakos ismétlődő díjfizetés egy eszköz azokra az **aktív előfizetőkre**, akik eddig ugyan használták az appot, de a Billing API használata előtt más módon kérték be tőlük a díjakat és állították ki a számlákat.
+Annak érdekében, hogy ezentúl a Billing API-val lehessen a már futó időszakra bekérni a díjat és számlát lehessen kiállítani, olyan előfizetést kell létrehozni, amely kezdete egy múltbéli dátum. Ennek megadására szolgál a **trialDays property megadása negatív értékkel.**
+
+Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és szeretne áttérni a Billing API rendszerében, akkor úgy kell létrehozni az előfizetést, hogy a **trialDays propertynek -24 -et kell megadni**. 
+
+#### Példa
+
+|   |   |   |   |   |
+|---|---|---|---|---|
+|Új előfizetési ciklus kezdete az app tulajdonos rendszerében  | **2020-09-01**  |
+|Előfizetési ciklus hossza napokban| **90**|
+|Előfizetés elindításának dátuma a Billing API rendszerében | **2020-09-24**  |
+|Számlakiállításához ennyi nappal kell visszadatálni | **-24**  |
+|Előfizetés első időszakáról kiálított számlán megjelenő dátum| **2020-09-01 - 2020-11-30**|
+
