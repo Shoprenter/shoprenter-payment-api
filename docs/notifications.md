@@ -44,7 +44,7 @@ A time property és a beérkezés ideje között pár másodperc különbség is
     </tr>
     <tr>
         <td>Post payload (one-line stringként szóközök nélkül)</td>
-        <td>{"id":69,"status":"pending","time": 1606740386}</td>
+        <td>{"id":69,"status":"pending","time":1606740386}</td>
     </tr>
     <tr>
         <td>Secret id</td>
