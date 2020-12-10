@@ -47,11 +47,11 @@ A time property és a beérkezés ideje között pár másodperc különbség is
         <td>{"id":69,"status":"pending","time":1606740386}</td>
     </tr>
     <tr>
-        <td>Secret id</td>
+        <td>ClientSecret</td>
         <td>ppmunf3z66qx6c9cpo0klmyq</td>
     </tr>
     <tr>
-        <td>HMAC<br>hash_hmac('sha256',$payload,$secretId);</td>
+        <td>HMAC<br>hash_hmac('sha256', $payload, $clientSecret);</td>
         <td>317a52549acd37817dfdf2d8989c9386b3d448faa6bc2ff597c71eaa37c76ee3</td>
     </tr>
     <tr>
