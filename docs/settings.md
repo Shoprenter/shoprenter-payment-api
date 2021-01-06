@@ -17,7 +17,7 @@ Az igényelt teszt bolt számlázási adatait minden esetben a megfelelő adatok
 A legfontosabb adat az email cím, mivel teszt üzemmódban ide fogja kiküldeni a rendszer
 a számlázási adat-összesítő teszt emailt. 
 
-Minden ide vonatkozó adatot a teszt bolt admin felületén a "Fiókom" menüpontban tudnak módosítani. Link: https://valami.shoprenter.hu/admin/sales/account#/billingaddress
+Minden ide vonatkozó adatot a teszt bolt admin felületén a "Fiókom" menüpontban tudnak módosítani. Link: https://valami.shoprenter.hu/admin/sales/account#/billingAddress
 
 Továbbá ugyancsak **fontos** megjegyezni, és felkészíteni alkalmazásunkat arra, hogy képes legyen az elkészített fizetési módok adatainak tárolására. Itt konkrétan az [Egyszeri díjfizetés](../docs/one_time_charge.md) és az [Ismétlődő díjfizetés](../docs/recurring_charge.md) létrehozása után kapott
 válasz üzenetben szereplő adatokról van szó.
