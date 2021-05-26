@@ -1,6 +1,6 @@
 # Teszt üzemmód
 
-Lehetőséget adunk arra, hogy a Billing API integrációját - annak fejlesztése közben - biztonságosan lehessen tesztelni.
+Lehetőséget adunk arra, hogy a Shoprenter Payment API integrációját - annak fejlesztése közben - biztonságosan lehessen tesztelni.
 Ahhoz, hogy egy fizetést teszt üzemmódban indítsuk el, az új fizetést létrehozásánál, ami lehet [egyszeri](../docs/one_time_charge.md) vagy akár [ismétlődő](../docs/recurring_charge.md), a payload-nak tartalmaznia kell a **test** tulajdonságot **true** értékkel.
 
 Példa POST adatokra recurring charge esetén:

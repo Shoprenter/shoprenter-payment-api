@@ -1,6 +1,6 @@
 ## Szükséges beállítások
 
-A Billing API használata előtt - ha már van alkalmazásunk - igényelnünk kell a partnersupport@shoprenter.hu
+A Shoprenter Payment API használata előtt - ha már van alkalmazásunk - igényelnünk kell a partnersupport@shoprenter.hu
 email címen keresztül egy felhasználó nevet és egy token-t. A ShopRenter munkatársai regisztrálják a kérést
 és ezután használatba vehető az API. Ekkor egy felhasználó név és token párost készítünk el ami a ShopRenter
 Partner Dashboard oldalra való belépést biztosítja.
