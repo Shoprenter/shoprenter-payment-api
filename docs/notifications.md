@@ -1,7 +1,7 @@
 # Értesítés webhookok - a notificationUrl
 
-A Billing API, a fizetési folyamat közben történő események üzeneteit a notificationUrl tulajdonságnál megadott URL-re küldi el.
-A webhook tartalmazza a fizetési mód azonosítóját és a aktuális állapotát. A Billing API által küldött webhook kérés HTTP metódusa **POST**.
+A Shoprenter Payment API, a fizetési folyamat közben történő események üzeneteit a notificationUrl tulajdonságnál megadott URL-re küldi el.
+A webhook tartalmazza a fizetési mód azonosítóját és a aktuális állapotát. A Shoprenter Payment API által küldött webhook kérés HTTP metódusa **POST**.
 
 A státuszok vizsgálatával következtethetünk egy fizetési mód életciklusában bekövetkezett változásokra, esetleges hibákra.
 A lehetséges státuszok itt érhetőek el: [elérhető státuszok](../docs/statuses.md).
@@ -25,15 +25,15 @@ A lehetséges státuszok itt érhetőek el: [elérhető státuszok](../docs/stat
 
 ## Webhook hitelesítése
 
-A Billing API-tól érkező webhookok hitelesítését legkönnyebben a kiküldött url-hez hozzáfűzött **hmac** query paraméter és a post payloadban található time property közös ellenőrzésével lehet megvalósítani.
+A Shoprenter Payment API-tól érkező webhookok hitelesítését legkönnyebben a kiküldött url-hez hozzáfűzött **hmac** query paraméter és a post payloadban található time property közös ellenőrzésével lehet megvalósítani.
 
 A hmac generálás a gyakorlatban úgy néz, hogy az alkalmazás felvétele során regisztrált **WebhookSecretKey*** használatával az elküldött post payloadot hash_hmac függvénnyel (sha256 algoritmussal) egy sztringet generálunk.
-Amennyiben a fogadó fél, azaz alkalmazás elvégzi az előbbi műveletet és összeveti a webhookban található **hmac-kel** és az egyezik, akkor a webhook a Billing API-tól származhat.
+Amennyiben a fogadó fél, azaz alkalmazás elvégzi az előbbi műveletet és összeveti a webhookban található **hmac-kel** és az egyezik, akkor a webhook a Shoprenter Payment API-tól származhat.
 
 Az autentikálás második felében továbbá érdemes ellenőrizni, hogy a post payloadban található **time** propertyben tárolt timestamp körülbelül egybeesik-e a webhook beérkezésének timestampjével.
 A time property és a beérkezés ideje között pár másodperc különbség is adódhat. Az ideális időkülönbség kialakítása az alkalmazás fejlesztő feladata.
 
-**Fontos megjegyezni, hogy a Billing API kiküldéskor előállított timestampje a Etc/UTC (UTC, +0000) időzóna alapján van generálva!**
+**Fontos megjegyezni, hogy a Shoprenter Payment API kiküldéskor előállított timestampje a Etc/UTC (UTC, +0000) időzóna alapján van generálva!**
 
 *Ha még nem rendelkezünk WebhookSecretKey-el, a partnersupport@shoprenter.hu email címen megtehetjük.
 

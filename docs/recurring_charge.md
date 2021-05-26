@@ -125,7 +125,7 @@ Természetesen itt is minden hibáról a notificationUrl értesítést kap az al
 
 Az app tulajdonosa élhet azzal a lehetőséggel, hogy az app leendő vásárlójának próbaidőszak formájában ingyenesen a rendelkezésére bocsátja az app összes vagy csak némely funkcionalitását egy meghatározott időszakra pl: 30 napra.
 Tegyük fel, hogy az app felhasználója a próbaidőszak alatt úgy dönt, hogy számára értékes az app és ezért előfizet, ellenben szeretne még élni a fennmaradó 20 napos ingyenes próbaidőszakkal.
-Annak érdekében, hogy az előfizetés megtörténjen, de a számlán csak a 20 nappal későbbi dátum szerepeljen, illetve a későbbi levonások is ennek függvényében történjenek, ezért a Billing API segítségével úgy kell létrehozunk az előfizetést, hogy a **trialDays propertynek átadjuk a fennmaradó 20 napot.**
+Annak érdekében, hogy az előfizetés megtörténjen, de a számlán csak a 20 nappal későbbi dátum szerepeljen, illetve a későbbi levonások is ennek függvényében történjenek, ezért a Shoprenter Payment API segítségével úgy kell létrehozunk az előfizetést, hogy a **trialDays propertynek átadjuk a fennmaradó 20 napot.**
 
 #### Példa
 
@@ -159,10 +159,10 @@ Annak érdekében, hogy az előfizetés megtörténjen, de a számlán csak a 20
 ### Negatív próbaidőszakos ismétlődő díjfizetés (Negative Trial Recurring Charge)
 
 A negatív próbaidőszakos ismétlődő díjfizetés megértéséhez egy kicsit el kell vonatkoztatunk az előbbi pozitív ismétlődő díjfizetés használatánál olvasottaktól.
-A negatív próbaidőszakos ismétlődő díjfizetés egy eszköz azokra az **aktív előfizetőkre**, akik eddig ugyan használták az appot, de a Billing API használata előtt más módon kérték be tőlük a díjakat és állították ki a számlákat.
-Annak érdekében, hogy ezentúl a Billing API-val lehessen a már futó időszakra bekérni a díjat és számlát lehessen kiállítani, olyan előfizetést kell létrehozni, amely kezdete egy múltbéli dátum. Ennek megadására szolgál a **trialDays property megadása negatív értékkel.**
+A negatív próbaidőszakos ismétlődő díjfizetés egy eszköz azokra az **aktív előfizetőkre**, akik eddig ugyan használták az appot, de a Shoprenter Payment API használata előtt más módon kérték be tőlük a díjakat és állították ki a számlákat.
+Annak érdekében, hogy ezentúl a Shoprenter Payment API-val lehessen a már futó időszakra bekérni a díjat és számlát lehessen kiállítani, olyan előfizetést kell létrehozni, amely kezdete egy múltbéli dátum. Ennek megadására szolgál a **trialDays property megadása negatív értékkel.**
 
-Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és szeretne áttérni a Billing API rendszerébe, akkor úgy kell létrehozni az előfizetést, hogy a **trialDays propertynek -24 -et kell megadni**.   
+Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és szeretne áttérni a Shoprenter Payment API rendszerébe, akkor úgy kell létrehozni az előfizetést, hogy a **trialDays propertynek -24 -et kell megadni**.   
 
 #### Példa
 
@@ -176,7 +176,7 @@ Ha például 24 napja fut az előfizetés az app tulajdonos rendszerében és sz
         <td><strong>90</strong></td>
     </tr>
     <tr>
-        <td>Előfizetés elindításának dátuma a Billing API rendszerében</td>
+        <td>Előfizetés elindításának dátuma a Shoprenter Payment API rendszerében</td>
         <td><strong>2020-09-24</strong></td>
     </tr>
     <tr>
