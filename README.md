@@ -1,8 +1,8 @@
-# ShopRenter Billing API
+# ShopRenter Payment API
 
 ## Leírás
 
-A Billing API egy olyan eszköztár, amely olyan kártyás fizetési lehetőséget ad az alkalmazásokhoz, 
+A Payment API egy olyan eszköztár, amely olyan kártyás fizetési lehetőséget ad az alkalmazásokhoz, 
 amivel gyorsabban konvertálhatja a ShopRenterből érkező lead-eket bárki. Egyszeri és ismétlődő díj
 fizetés is eszközölhető vele, emellett az automatikus számlakiállításról is gondoskodik az alkalmazás
 fejlesztők közbenjárása nélkül. Biztosítunk a fenti funkciók mellett egy grafikus felületet is.

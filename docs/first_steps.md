@@ -3,7 +3,7 @@
 Mivel a fizetési tervek létrehozásához API-t használunk, minden esetben a fejlesztőnek kell biztosítani egy felületet az alkalmazásán belül,
 ahol a bolt tulajdonos elindíthatja a fizetési folyamatot. Ha pl. az Ismétlődő díjfizetést vesszük alapul, az alkalmazásunk tartalmazhat
 egy olyan aloldalt, ahol különböző havi díjas csomagokat kínálhatunk. A csomag kiválasztása után, ennek megfelelően POST kérést küld
-az alkalmazás a Billing API felé, hogy létrehozzon egy Ismétlődő díjfizetést.
+az alkalmazás a Payment API felé, hogy létrehozzon egy Ismétlődő díjfizetést.
 
 Amire szükség lesz tehát:
 
