@@ -3,8 +3,8 @@
 A Payment API-t csak a Shoprenteres alkalmazások értékesítésére használható. Következésképpen, ahhoz, hogy hozzáférjünk és fizetéseket hozzunk létre, használatához szükséges a Shoprenter API hozzáférés.
 
 A Payment API két legfontosabb végpontja a
-- <boltnev>.api.myshoprenter.hu/billing/recurringCharges
-- <boltnev>.api.myshoprenter.hu/billing/oneTimeCharges
+- [boltnev].api.myshoprenter.hu/billing/recurringCharges
+- [boltnev].api.myshoprenter.hu/billing/oneTimeCharges
 
 Ezek elérésehez szükséges az adott alkalmazás telepítése során megszerzett username/password páros, amellyekkel bármely más Shoprenter API resource-ot is használjuk.
 
@@ -29,7 +29,15 @@ a számlázási adat-összesítő teszt emailt.
 
 Minden ide vonatkozó adatot a teszt bolt admin felületén a "Fiókom" menüpontban tudnak módosítani. Link: https://valami.shoprenter.hu/admin/sales/account#/billingAddress
 
-Továbbá ugyancsak **fontos** megjegyezni, és felkészíteni alkalmazásunkat arra, hogy képes legyen az elkészített fizetési módok adatainak tárolására. Itt konkrétan az [Egyszeri díjfizetés](../docs/one_time_charge.md) és az [Ismétlődő díjfizetés](../docs/recurring_charge.md) létrehozása után kapott
-válasz üzenetben szereplő adatokról van szó.
-Ez azért nagyon fontos, hogy az alkalmazás fejlesztője éretelmezni tudja, hogy az [Értesítési webhookokban](../docs/notifications.md) érkező
-ID mely fizetési módhoz tartozik.
+Ajánlott letárolni az elkészített fizetések azonosítóját, amelyek 
+a
+- [boltnev].api.myshoprenter.hu/billing/recurringCharges ( [Ismétlődő díjfizetés](../docs/recurring_charge.md) )
+- [boltnev].api.myshoprenter.hu/billing/oneTimeCharges ( [Egyszeri díjfizetés](../docs/one_time_charge.md) )
+
+végpontok válaszaiban érkeznek.
+
+Az [Értesítési webhookokban](../docs/notifications.md)  érkező üzenetekből értesül a partner, hogy az adott fizetés, mely státuszba váltott át.
+
+Pl.: Egy Ismétlődő díjfizetés esetén a terhelendő kártyával valamilyen probléma történt a soron következő terhelési kisérlet alatt, így a Payment API-tól érkezik egy webhook, melyben értesül a felhasználó, hogy a 2345-ös azonosítóval rendelkező Recurring Charge FROZEN állapotra váltott át.
+
+Így ahhoz, hogy követni tudják az állapot változásokat, az alkalmazás fejlesztőknek szükséges saját adatbázist kialakítani a futó fizetések nyomonkövetéséhez.
